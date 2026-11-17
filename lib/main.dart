@@ -3,17 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'data/catalog.dart';
-import 'data/sample_questions.dart';
-import 'data/expanded_questions.dart';
-import 'data/new_reviewed_questions.dart';
-import 'data/curated_additions.dart';
-import 'data/christmas_carols_questions.dart';
-import 'data/geography_misc_questions.dart';
-import 'data/new_sports_questions.dart';
-import 'data/sports_history_additions.dart';
-import 'data/story_questions.dart';
-import 'data/bible_expanded_questions.dart';
 import 'models/question.dart';
+import 'services/question_repository.dart';
 
 void main() => runApp(const TotalTriviaApp());
 
@@ -171,7 +162,7 @@ Widget _progressLine(String label, int points, int max) => Column(
 );
 void _playTopicNext(BuildContext context, String category, String topic, ProgressSnapshot progress) {
   for (final level in difficulties) {
-    final bank = _questionsFor(category, topic, level);
+    final bank = QuestionRepository.questionsFor(category, topic, level);
     if (bank.length < 10) continue;
     final saved = progress.records[category]?[topic]?[level];
     if ((saved?.best ?? 0) < 10 || (saved?.attempts ?? 0) == 0) {
@@ -181,7 +172,7 @@ void _playTopicNext(BuildContext context, String category, String topic, Progres
     }
   }
   for (final level in difficulties) {
-    final bank = _questionsFor(category, topic, level);
+    final bank = QuestionRepository.questionsFor(category, topic, level);
     if (bank.length >= 10) {
       Navigator.push(context, MaterialPageRoute(builder: (_) =>
         QuizScreen(category: category, topic: topic, level: level, pool: bank)));
@@ -244,7 +235,7 @@ class ProgressScreen extends StatelessWidget {
                   final result = progress.records[category.title]?[topic]?[level];
                   final best = result?.best ?? 0;
                   final attempts = result?.attempts ?? 0;
-                  final bank = _questionsFor(category.title, topic, level);
+                  final bank = QuestionRepository.questionsFor(category.title, topic, level);
                   final available = bank.length >= 10;
                   return Padding(
                     padding: const EdgeInsets.only(left: 16, right: 12, bottom: 12),
@@ -536,39 +527,8 @@ class TopicsScreen extends StatelessWidget {
 }
 
 int _countForTopic(String category, String topic) =>
-  difficulties.fold<int>(0, (count, d) => count + _questionsFor(category, topic, d).length);
+  difficulties.fold<int>(0, (count, d) => count + QuestionRepository.questionsFor(category, topic, d).length);
 
-List<Question> _questionsFor(String category, String topic, String level) {
-  // New sports questions extend the existing 10 Easy questions and fill
-  // the previously missing Medium and Hard pools, without replacing content.
-  if (category == 'Sports' && sportsHistoryAdditions.containsKey(topic)) {
-    final added = sportsHistoryAdditions[topic]?[level] ?? <Question>[];
-    final original = expandedQuestionBanks[category]?[topic]?[level] ?? <Question>[];
-    return [...original, ...added];
-  }
-
-  // Preserve existing questions and add separately reviewed, unique additions.
-  final additions = curatedAdditions[category]?[topic]?[level];
-  if (additions != null && additions.isNotEmpty) {
-    final original = newReviewedQuestionBanks[category]?[topic]?[level] ?? <Question>[];
-    return [...original, ...additions];
-  }
-  final carols = christmasCarolsQuestionBanks[category]?[topic]?[level];
-  if (carols != null && carols.isNotEmpty) return carols;
-  if (category == 'Bible') return [
-    ...?storyQuestionBanks[topic]?[level],
-    ...?bibleExpandedQuestions[topic]?[level],
-  ];
-  final geo = geographyMiscQuestionBanks[category]?[topic]?[level];
-  if (geo != null && geo.isNotEmpty) return geo;
-  final sports = newSportsQuestionBanks[category]?[topic]?[level];
-  if (sports != null && sports.isNotEmpty) return sports;
-  final reviewed = newReviewedQuestionBanks[category]?[topic]?[level];
-  if (reviewed != null && reviewed.isNotEmpty) return reviewed;
-  final expanded = expandedQuestionBanks[category]?[topic]?[level];
-  if (expanded != null && expanded.isNotEmpty) return expanded;
-  return sampleQuestionBanks[category]?[topic]?[level] ?? <Question>[];
-}
 
 class DifficultyScreen extends StatelessWidget {
   final String category, topic;
@@ -583,7 +543,7 @@ class DifficultyScreen extends StatelessWidget {
       const Text('Each available quiz has exactly 10 randomly chosen questions.'),
       const SizedBox(height: 16),
       ...difficulties.map((level) {
-        final questions = _questionsFor(category, topic, level);
+        final questions = QuestionRepository.questionsFor(category, topic, level);
         final ready = questions.length >= 10;
         return Card(child: ListTile(
           contentPadding: const EdgeInsets.all(16),
@@ -738,7 +698,7 @@ class ResultsScreen extends StatelessWidget {
     // Easy -> Medium -> Hard within the same topic.
     if (levelIndex >= 0 && levelIndex < difficulties.length - 1) {
       final nextLevel = difficulties[levelIndex + 1];
-      final pool = _questionsFor(category, topic, nextLevel);
+      final pool = QuestionRepository.questionsFor(category, topic, nextLevel);
       if (pool.length >= 10) {
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => QuizScreen(
           category: category, topic: topic, level: nextLevel, pool: pool)));
@@ -758,7 +718,7 @@ class ResultsScreen extends StatelessWidget {
       final topics = matching.first.subcategories;
       final currentTopicIndex = topics.indexOf(topic);
       for (var i = currentTopicIndex + 1; i < topics.length; i++) {
-        final nextPool = _questionsFor(category, topics[i], 'Easy');
+        final nextPool = QuestionRepository.questionsFor(category, topics[i], 'Easy');
         if (nextPool.length >= 10) {
           Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => QuizScreen(
             category: category, topic: topics[i], level: 'Easy', pool: nextPool)));
@@ -823,7 +783,7 @@ class ResultsScreen extends StatelessWidget {
       const SizedBox(height: 8),
       FilledButton.icon(icon: const Icon(Icons.replay), label: const Text('PLAY AGAIN'),
         onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => QuizScreen(
-          category: category, topic: topic, level: level, pool: _questionsFor(category, topic, level))))),
+          category: category, topic: topic, level: level, pool: QuestionRepository.questionsFor(category, topic, level))))),
       OutlinedButton.icon(icon: const Icon(Icons.home), label: const Text('HOME'),
         onPressed: () => Navigator.popUntil(context, (route) => route.isFirst)),
     ]))),
