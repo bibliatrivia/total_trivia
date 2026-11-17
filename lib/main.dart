@@ -129,27 +129,95 @@ class LevelProgress {
 class ProgressSnapshot {
   final Map<String, Map<String, Map<String, LevelProgress>>> records;
   const ProgressSnapshot(this.records);
-  int get maxPoints => categories.fold(0, (sum, category) => sum + category.subcategories.length * difficulties.length * 10);
+
+  bool _isPlayable(String category, String topic, String level) =>
+      QuestionRepository.questionsFor(category, topic, level).length >= 10;
+
+  int get maxPoints {
+    var total = 0;
+    for (final category in categories) {
+      for (final topic in category.subcategories) {
+        total += topicMax(category.title, topic);
+      }
+    }
+    return total;
+  }
+
   Iterable<LevelProgress> get levels sync* {
     for (final topics in records.values) {
-      for (final levelMap in topics.values) { yield* levelMap.values; }
+      for (final levelMap in topics.values) {
+        yield* levelMap.values;
+      }
     }
   }
-  int get points => levels.fold(0, (sum, r) => sum + r.best);
+
+  int get points {
+    var total = 0;
+    for (final category in categories) {
+      total += categoryPoints(category.title);
+    }
+    return total;
+  }
+
   int get attempts => levels.fold(0, (sum, r) => sum + r.attempts);
   int get perfects => levels.fold(0, (sum, r) => sum + r.perfects);
-  int get topicsPlayed => records.values.expand((t) => t.values)
-    .where((d) => d.values.any((r) => r.attempts > 0)).length;
-  int get categoriesPlayed => records.values.where((topics) =>
-    topics.values.any((d) => d.values.any((r) => r.attempts > 0))).length;
+  int get topicsPlayed => records.values
+      .expand((t) => t.values)
+      .where((d) => d.values.any((r) => r.attempts > 0))
+      .length;
+  int get categoriesPlayed => records.values
+      .where((topics) => topics.values
+          .any((d) => d.values.any((r) => r.attempts > 0)))
+      .length;
   int get levelsPlayed => levels.where((r) => r.attempts > 0).length;
-  int categoryPoints(String category) => records[category]?.values
-    .expand((levels) => levels.values).fold<int>(0, (sum, r) => sum + r.best) ?? 0;
-  int categoryMax(String category) => (records[category]?.length ?? 0) * difficulties.length * 10;
-  int topicPoints(String category, String topic) => records[category]?[topic]
-    ?.values.fold<int>(0, (sum, r) => sum + r.best) ?? 0;
+
+  int categoryPoints(String category) {
+    final topics = records[category];
+    if (topics == null) return 0;
+
+    var total = 0;
+    for (final topic in topics.keys) {
+      total += topicPoints(category, topic);
+    }
+    return total;
+  }
+
+  int categoryMax(String category) {
+    for (final categoryDefinition in categories) {
+      if (categoryDefinition.title == category) {
+        return categoryDefinition.subcategories.fold(
+          0,
+          (sum, topic) => sum + topicMax(category, topic),
+        );
+      }
+    }
+    return 0;
+  }
+
+  int topicPoints(String category, String topic) {
+    final levelRecords = records[category]?[topic];
+    if (levelRecords == null) return 0;
+
+    var total = 0;
+    for (final level in difficulties) {
+      if (_isPlayable(category, topic, level)) {
+        total += levelRecords[level]?.best ?? 0;
+      }
+    }
+    return total;
+  }
+
+  int topicMax(String category, String topic) {
+    var playableLevels = 0;
+    for (final level in difficulties) {
+      if (_isPlayable(category, topic, level)) playableLevels++;
+    }
+    return playableLevels * 10;
+  }
+
   double get fraction => maxPoints == 0 ? 0 : points / maxPoints;
 }
+
 Widget _progressLine(String label, int points, int max) => Column(
   crossAxisAlignment: CrossAxisAlignment.start, children: [
     Row(children: [
@@ -219,7 +287,8 @@ class ProgressScreen extends StatelessWidget {
                 subtitle: Padding(
                   padding: const EdgeInsets.only(top: 6, bottom: 7),
                   child: _progressLine('Topic total',
-                      progress.topicPoints(category.title, topic), 30),
+                      progress.topicPoints(category.title, topic),
+                      progress.topicMax(category.title, topic)),
                 ),
                 children: [
                   Align(
