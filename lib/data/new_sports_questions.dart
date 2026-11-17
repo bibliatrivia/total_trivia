@@ -1,6 +1,6 @@
 // Verified structure: exactly 20 distinct MCQs per new Sports topic and difficulty.
 // Championship result source URLs are listed in CONTENT_AUDIT.csv.
-import '../main.dart' show Question;
+import '../models/question.dart';
 
 final Map<String, Map<String, Map<String, List<Question>>>> newSportsQuestionBanks = {
   "Sports": {

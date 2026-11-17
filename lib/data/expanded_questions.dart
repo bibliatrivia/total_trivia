@@ -1,5 +1,5 @@
 // Total Trivia expansion: original quiz questions, not excerpts from books/films.
-import '../main.dart' show Question;
+import '../models/question.dart';
 
 final Map<String, Map<String, Map<String, List<Question>>>> expandedQuestionBanks = {
   "Holidays": {

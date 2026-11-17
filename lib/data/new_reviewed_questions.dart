@@ -1,6 +1,6 @@
 // Carefully authored questions for newly added topics.
 // Sources and review register are in NEW_CONTENT_REVIEW.csv.
-import '../main.dart' show Question;
+import '../models/question.dart';
 
 final Map<String, Map<String, Map<String, List<Question>>>> newReviewedQuestionBanks = {
   "Holidays": {

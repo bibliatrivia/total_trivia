@@ -1,6 +1,6 @@
 // Sports history expansion: 150 new original multiple-choice questions.
 // Each answer is accompanied by an explanatory fact; see SOURCES_AND_AUDIT.md.
-import '../main.dart' show Question;
+import '../models/question.dart';
 
 final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
   "Baseball": {

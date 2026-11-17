@@ -1,6 +1,6 @@
 // Original Bible trivia expansion; each question carries a chapter/verse source.
 // New entries extend the existing banks and do not replace previous progress data.
-import '../main.dart' show Question;
+import '../models/question.dart';
 
 final Map<String, Map<String, List<Question>>> bibleExpandedQuestions = {
   'Genesis': {

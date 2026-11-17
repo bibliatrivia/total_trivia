@@ -1,6 +1,6 @@
 // Christmas Carols: 20 unique questions per Easy / Medium / Hard.
 // Question-level review sources are in CHRISTMAS_CAROLS_AUDIT.csv.
-import '../main.dart' show Question;
+import '../models/question.dart';
 
 final Map<String, Map<String, Map<String, List<Question>>>> christmasCarolsQuestionBanks = {
   'Holidays': {

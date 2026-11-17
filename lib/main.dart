@@ -13,6 +13,7 @@ import 'data/new_sports_questions.dart';
 import 'data/sports_history_additions.dart';
 import 'data/story_questions.dart';
 import 'data/bible_expanded_questions.dart';
+import 'models/question.dart';
 
 void main() => runApp(const TotalTriviaApp());
 
@@ -71,15 +72,6 @@ String _harryPotterTitle(String key) {
   return key;
 }
 
-// Compatible with the independently developed Biblia Trivia story question bank.
-class Question {
-  final String question;
-  final List<String> answers;
-  final int correctAnswer;
-  final String explanation;
-  const Question({required this.question, required this.answers,
-    required this.correctAnswer, required this.explanation});
-}
 
 // A consistent Home button on every page. The root screen stays in place.
 Widget _homeAction(BuildContext context) => IconButton(

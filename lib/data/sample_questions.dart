@@ -1,4 +1,4 @@
-import '../main.dart' show Question;
+import '../models/question.dart';
 
 // Independently authored starter material; expand these banks before launch.
 final Map<String, Map<String, Map<String, List<Question>>>> sampleQuestionBanks = {

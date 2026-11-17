@@ -1,6 +1,6 @@
 // Authored question bank. All correct answer indices and choice uniqueness are checked.
 // See CONTENT_AUDIT.csv for question text and source pointers.
-import '../main.dart' show Question;
+import '../models/question.dart';
 
 final Map<String, Map<String, Map<String, List<Question>>>> geographyMiscQuestionBanks = {
   "Geography": {

@@ -1,6 +1,6 @@
 // Hand-authored narrative questions for selected Bible books.
 // Other books still use the book-facts quizzes until their content is written.
-import '../main.dart' show Question;
+import '../models/question.dart';
 
 final Map<String, Map<String, List<Question>>> storyQuestionBanks = {
   'Genesis': {

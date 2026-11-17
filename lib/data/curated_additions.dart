@@ -1,6 +1,6 @@
 // Curated question additions; paired with the existing reviewed bank.
 // Sources: National Archives (Constitution, Amendments), and Luke 1–2/Matthew 1–2.
-import '../main.dart' show Question;
+import '../models/question.dart';
 
 final Map<String, Map<String, Map<String, List<Question>>>> curatedAdditions = {
   "History": {
