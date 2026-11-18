@@ -11,8 +11,7 @@ class ProgressService {
   static String _key(String category, String topic, String level) =>
       '$_prefix${Uri.encodeComponent(category)}|${Uri.encodeComponent(topic)}|$level';
 
-  static Future<SharedPreferences> _prefs() =>
-      SharedPreferences.getInstance();
+  static Future<SharedPreferences> _prefs() => SharedPreferences.getInstance();
 
   static Future<void> save(
     String category,
@@ -41,10 +40,20 @@ class ProgressService {
     }
   }
 
+  static Future<void> resetAll() async {
+    final prefs = await _prefs();
+    final progressKeys = prefs.getKeys()
+        .where((key) => key.startsWith(_prefix))
+        .toList(growable: false);
+
+    for (final key in progressKeys) {
+      await prefs.remove(key);
+    }
+  }
+
   static Future<ProgressSnapshot> load() async {
     final prefs = await _prefs();
-    final records =
-        <String, Map<String, Map<String, LevelProgress>>>{};
+    final records = <String, Map<String, Map<String, LevelProgress>>>{};
 
     for (final category in categories) {
       records[category.title] = {};

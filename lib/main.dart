@@ -6,6 +6,7 @@ import 'models/question.dart';
 import 'models/progress_models.dart';
 import 'services/question_repository.dart';
 import 'services/progress_service.dart';
+import 'screens/settings_screen.dart';
 
 void main() => runApp(const TotalTriviaApp());
 
@@ -329,7 +330,17 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(
       title: const Text('Total Trivia', style: TextStyle(fontWeight: FontWeight.bold)),
-      actions: [_homeAction(context)],
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.settings),
+          tooltip: 'Settings',
+          onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const SettingsScreen()),
+          ),
+        ),
+        _homeAction(context),
+      ],
     ),
     body: SafeArea(child: Scrollbar(child: ListView(
       physics: const AlwaysScrollableScrollPhysics(), padding: const EdgeInsets.all(20), children: [
