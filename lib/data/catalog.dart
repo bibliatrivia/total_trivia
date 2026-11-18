@@ -62,16 +62,18 @@ const categories = <TriviaCategory>[
   ]),
   TriviaCategory('Movies', '🎬', [
     'Actors','Oscars','Action','Marvel','Drama','Comedies',
+    'Romance','RomComs','Musicals','Disney',
+    ...harryPotterMovies,
   ]),
   TriviaCategory('Music', '🎵', [
     '60s','70s','80s','90s','00s','10s','20s',
   ]),
   TriviaCategory('India', '🇮🇳', [...indiaStates, ...indiaUnionTerritories]),
-  TriviaCategory('Harry Potter', '⚡', [...harryPotterBooks, ...harryPotterMovies]),
   TriviaCategory('Holidays', '🎉', [
     'Christmas','Christmas Nativity','Christmas Movies','Christmas Songs','Christmas Carols','Easter','Thanksgiving','Fourth of July',
   ]),
-  TriviaCategory('Good Books', '📚', [
+  TriviaCategory('Books', '📚', [
     'Classic Literature','Fiction','Non-Fiction','Franchises','What Book Am I?',
+    ...harryPotterBooks,
   ]),
 ];

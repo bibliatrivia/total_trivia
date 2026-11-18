@@ -434,22 +434,47 @@ class HarryPotterSectionsScreen extends StatelessWidget {
 class HarryPotterTitlesScreen extends StatelessWidget {
   final bool isBooks;
   const HarryPotterTitlesScreen({super.key, required this.isBooks});
+
   @override
   Widget build(BuildContext context) {
     final titles = isBooks ? _harryPotterBookTitles : _harryPotterMovieTitles;
+    final category = isBooks ? 'Books' : 'Movies';
     return Scaffold(
-      appBar: AppBar(title: Text(isBooks ? 'Harry Potter Books' : 'Harry Potter Movies'), actions: [_homeAction(context)]),
-      body: SafeArea(child: Scrollbar(child: ListView(
-        physics: const AlwaysScrollableScrollPhysics(),
-        padding: const EdgeInsets.all(16),
-        children: [for (final title in titles) Card(child: ListTile(
-          title: Text(_harryPotterTitle(title)),
-          subtitle: Text('${_countForTopic('Harry Potter', title)} questions available'),
-          trailing: const Icon(Icons.chevron_right),
-          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) =>
-            DifficultyScreen(category: 'Harry Potter', topic: title))),
-        ))],
-      ))),
+      appBar: AppBar(
+        title: Text(isBooks ? 'Harry Potter Books' : 'Harry Potter Movies'),
+        actions: [_homeAction(context)],
+      ),
+      body: SafeArea(
+        child: Scrollbar(
+          child: ListView(
+            physics: const AlwaysScrollableScrollPhysics(),
+            padding: const EdgeInsets.all(16),
+            children: [
+              for (final title in titles)
+                Card(
+                  child: ListTile(
+                    title: Text(_harryPotterTitle(title)),
+                    subtitle: Text(
+                      _countForTopic(category, title) > 0
+                          ? '${_countForTopic(category, title)} questions available'
+                          : 'Questions coming soon',
+                    ),
+                    trailing: const Icon(Icons.chevron_right),
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => DifficultyScreen(
+                          category: category,
+                          topic: title,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
@@ -457,27 +482,106 @@ class HarryPotterTitlesScreen extends StatelessWidget {
 class TopicsScreen extends StatelessWidget {
   final TriviaCategory category;
   const TopicsScreen({super.key, required this.category});
+
   @override
-  Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: Text('${category.icon}  ${category.title}'), actions: [_homeAction(context)]),
-    body: SafeArea(child: Scrollbar(child: ListView(
-      physics: const AlwaysScrollableScrollPhysics(), padding: const EdgeInsets.all(16), children: [
-      ...category.subcategories.map((topic) => Card(child: ListTile(
-        title: Text(topic, style: const TextStyle(fontWeight: FontWeight.w600)),
-        subtitle: Text(_countForTopic(category.title, topic) > 0
-          ? '${_countForTopic(category.title, topic)} questions available'
-          : 'Questions coming soon'),
-        trailing: const Icon(Icons.chevron_right),
-        onTap: () => Navigator.push(context, MaterialPageRoute(
-          builder: (_) => DifficultyScreen(category: category.title, topic: topic))),
-      ))),
-    ]))),
-  );
+  Widget build(BuildContext context) {
+    final hiddenTopics = <String>{
+      if (category.title == 'Movies') ...harryPotterMovies,
+      if (category.title == 'Books') ...harryPotterBooks,
+    };
+    final visibleTopics = category.subcategories
+        .where((topic) => !hiddenTopics.contains(topic))
+        .toList(growable: false);
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('${category.icon}  ${category.title}'),
+        actions: [_homeAction(context)],
+      ),
+      body: SafeArea(
+        child: Scrollbar(
+          child: ListView(
+            physics: const AlwaysScrollableScrollPhysics(),
+            padding: const EdgeInsets.all(16),
+            children: [
+              ...visibleTopics.map(
+                (topic) => Card(
+                  child: ListTile(
+                    title: Text(
+                      topic,
+                      style: const TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                    subtitle: Text(
+                      _countForTopic(category.title, topic) > 0
+                          ? '${_countForTopic(category.title, topic)} questions available'
+                          : 'Questions coming soon',
+                    ),
+                    trailing: const Icon(Icons.chevron_right),
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => DifficultyScreen(
+                          category: category.title,
+                          topic: topic,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              if (category.title == 'Movies')
+                Card(
+                  child: ListTile(
+                    leading: const Icon(Icons.auto_awesome, color: gold),
+                    title: const Text(
+                      'Harry Potter Movies',
+                      style: TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                    subtitle: const Text('Choose from all 8 films'),
+                    trailing: const Icon(Icons.chevron_right),
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const HarryPotterTitlesScreen(
+                          isBooks: false,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              if (category.title == 'Books')
+                Card(
+                  child: ListTile(
+                    leading: const Icon(Icons.auto_stories, color: gold),
+                    title: const Text(
+                      'Harry Potter Books',
+                      style: TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                    subtitle: const Text('Choose from all 7 books'),
+                    trailing: const Icon(Icons.chevron_right),
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const HarryPotterTitlesScreen(
+                          isBooks: true,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
 
-int _countForTopic(String category, String topic) =>
-  difficulties.fold<int>(0, (count, d) => count + QuestionRepository.questionsFor(category, topic, d).length);
-
+int _countForTopic(String category, String topic) => difficulties.fold<int>(
+      0,
+      (count, difficulty) => count +
+          QuestionRepository.questionsFor(category, topic, difficulty).length,
+    );
 
 class DifficultyScreen extends StatelessWidget {
   final String category, topic;

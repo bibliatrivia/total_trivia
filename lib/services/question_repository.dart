@@ -1,4 +1,5 @@
 import '../data/bible_expanded_questions.dart';
+import '../data/catalog.dart';
 import '../data/christmas_carols_questions.dart';
 import '../data/curated_additions.dart';
 import '../data/expanded_questions.dart';
@@ -34,6 +35,29 @@ class QuestionRepository {
       return holidaysQuestionBank[topic]?[level] ?? <Question>[];
     }
 
+    // Harry Potter remains stored in the legacy Harry Potter bank but is
+    // presented under Movies and Books in the current catalog.
+    if (category == 'Movies' && harryPotterMovies.contains(topic)) {
+      return _legacyQuestionsFor('Harry Potter', topic, level);
+    }
+
+    if (category == 'Books' && harryPotterBooks.contains(topic)) {
+      return _legacyQuestionsFor('Harry Potter', topic, level);
+    }
+
+    // Existing Good Books content is presented under the renamed Books tile.
+    if (category == 'Books') {
+      return _legacyQuestionsFor('Good Books', topic, level);
+    }
+
+    return _legacyQuestionsFor(category, topic, level);
+  }
+
+  static List<Question> _legacyQuestionsFor(
+    String category,
+    String topic,
+    String level,
+  ) {
     if (category == 'Sports' && sportsHistoryAdditions.containsKey(topic)) {
       final added = sportsHistoryAdditions[topic]?[level] ?? <Question>[];
       final original =
