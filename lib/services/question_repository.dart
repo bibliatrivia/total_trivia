@@ -8,6 +8,7 @@ import '../data/new_reviewed_questions.dart';
 import '../data/new_sports_questions.dart';
 import '../data/question_banks/history_questions.dart';
 import '../data/question_banks/holidays_questions.dart';
+import '../data/question_banks/books_core_questions.dart';
 import '../data/question_banks/harry_potter_movies_1_4_questions.dart';
 import '../data/question_banks/harry_potter_movies_5_8_questions.dart';
 import '../data/question_banks/movies_genres_studios_questions.dart';
@@ -50,6 +51,9 @@ class QuestionRepository {
     }
     if (category == 'Books' && harryPotterBooks.contains(topic)) {
       return _legacyQuestionsFor('Harry Potter', topic, level);
+    }
+    if (category == 'Books' && booksCoreQuestionBank.containsKey(topic)) {
+      return booksCoreQuestionBank[topic]?[level] ?? <Question>[];
     }
     if (category == 'Movies' && moviesCoreQuestionBank.containsKey(topic)) {
       return moviesCoreQuestionBank[topic]?[level] ?? <Question>[];
