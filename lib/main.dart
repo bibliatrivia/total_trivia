@@ -1,10 +1,11 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'data/catalog.dart';
 import 'models/question.dart';
+import 'models/progress_models.dart';
 import 'services/question_repository.dart';
+import 'services/progress_service.dart';
 
 void main() => runApp(const TotalTriviaApp());
 
@@ -86,138 +87,6 @@ class TotalTriviaApp extends StatelessWidget {
 }
 
 
-// All progress is stored locally. Best results determine completion percentage,
-// while attempts/score counts also support achievements.
-class TotalTriviaProgress {
-  static const _prefix = 'tt_progress_v1_';
-  static String _key(String c, String t, String d) => '$_prefix${Uri.encodeComponent(c)}|${Uri.encodeComponent(t)}|$d';
-  static Future<SharedPreferences> _prefs() => SharedPreferences.getInstance();
-
-  static Future<void> save(String category, String topic, String level, int score) async {
-    final prefs = await _prefs();
-    final key = _key(category, topic, level);
-    final previousBest = prefs.getInt('${key}_best') ?? 0;
-    if (score > previousBest) await prefs.setInt('${key}_best', score);
-    await prefs.setInt('${key}_attempts', (prefs.getInt('${key}_attempts') ?? 0) + 1);
-    if (score == 10) await prefs.setInt('${key}_perfects', (prefs.getInt('${key}_perfects') ?? 0) + 1);
-  }
-
-  static Future<ProgressSnapshot> load() async {
-    final prefs = await _prefs();
-    final records = <String, Map<String, Map<String, LevelProgress>>>{};
-    for (final category in categories) {
-      records[category.title] = {};
-      for (final topic in category.subcategories) {
-        records[category.title]![topic] = {};
-        for (final level in difficulties) {
-          final key = _key(category.title, topic, level);
-          records[category.title]![topic]![level] = LevelProgress(
-            best: prefs.getInt('${key}_best') ?? 0,
-            attempts: prefs.getInt('${key}_attempts') ?? 0,
-            perfects: prefs.getInt('${key}_perfects') ?? 0,
-          );
-        }
-      }
-    }
-    return ProgressSnapshot(records);
-  }
-}
-class LevelProgress {
-  final int best, attempts, perfects;
-  const LevelProgress({required this.best, required this.attempts, required this.perfects});
-}
-class ProgressSnapshot {
-  final Map<String, Map<String, Map<String, LevelProgress>>> records;
-  const ProgressSnapshot(this.records);
-
-  bool _isPlayable(String category, String topic, String level) =>
-      QuestionRepository.questionsFor(category, topic, level).length >= 10;
-
-  int get maxPoints {
-    var total = 0;
-    for (final category in categories) {
-      for (final topic in category.subcategories) {
-        total += topicMax(category.title, topic);
-      }
-    }
-    return total;
-  }
-
-  Iterable<LevelProgress> get levels sync* {
-    for (final topics in records.values) {
-      for (final levelMap in topics.values) {
-        yield* levelMap.values;
-      }
-    }
-  }
-
-  int get points {
-    var total = 0;
-    for (final category in categories) {
-      total += categoryPoints(category.title);
-    }
-    return total;
-  }
-
-  int get attempts => levels.fold(0, (sum, r) => sum + r.attempts);
-  int get perfects => levels.fold(0, (sum, r) => sum + r.perfects);
-  int get topicsPlayed => records.values
-      .expand((t) => t.values)
-      .where((d) => d.values.any((r) => r.attempts > 0))
-      .length;
-  int get categoriesPlayed => records.values
-      .where((topics) => topics.values
-          .any((d) => d.values.any((r) => r.attempts > 0)))
-      .length;
-  int get levelsPlayed => levels.where((r) => r.attempts > 0).length;
-
-  int categoryPoints(String category) {
-    final topics = records[category];
-    if (topics == null) return 0;
-
-    var total = 0;
-    for (final topic in topics.keys) {
-      total += topicPoints(category, topic);
-    }
-    return total;
-  }
-
-  int categoryMax(String category) {
-    for (final categoryDefinition in categories) {
-      if (categoryDefinition.title == category) {
-        return categoryDefinition.subcategories.fold(
-          0,
-          (sum, topic) => sum + topicMax(category, topic),
-        );
-      }
-    }
-    return 0;
-  }
-
-  int topicPoints(String category, String topic) {
-    final levelRecords = records[category]?[topic];
-    if (levelRecords == null) return 0;
-
-    var total = 0;
-    for (final level in difficulties) {
-      if (_isPlayable(category, topic, level)) {
-        total += levelRecords[level]?.best ?? 0;
-      }
-    }
-    return total;
-  }
-
-  int topicMax(String category, String topic) {
-    var playableLevels = 0;
-    for (final level in difficulties) {
-      if (_isPlayable(category, topic, level)) playableLevels++;
-    }
-    return playableLevels * 10;
-  }
-
-  double get fraction => maxPoints == 0 ? 0 : points / maxPoints;
-}
-
 Widget _progressLine(String label, int points, int max) => Column(
   crossAxisAlignment: CrossAxisAlignment.start, children: [
     Row(children: [
@@ -256,7 +125,7 @@ class ProgressScreen extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(title: const Text('My Progress'), actions: [_homeAction(context)]),
     body: FutureBuilder<ProgressSnapshot>(
-      future: TotalTriviaProgress.load(),
+      future: ProgressService.load(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) return const Center(child: CircularProgressIndicator());
         final progress = snapshot.data!;
@@ -350,7 +219,7 @@ class AchievementsScreen extends StatelessWidget {
   @override Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(title: const Text('My Achievements'), actions: [_homeAction(context)]),
     body: FutureBuilder<ProgressSnapshot>(
-      future: TotalTriviaProgress.load(),
+      future: ProgressService.load(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) return const Center(child: CircularProgressIndicator());
         final p = snapshot.data!;
@@ -660,7 +529,7 @@ class _QuizScreenState extends State<QuizScreen> {
   Future<void> next() async {
     if (choice == null) return;
     if (current == questions.length - 1) {
-      await TotalTriviaProgress.save(widget.category, widget.topic, widget.level, score);
+      await ProgressService.save(widget.category, widget.topic, widget.level, score);
       if (!mounted) return;
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => ResultsScreen(
         category: widget.category,
