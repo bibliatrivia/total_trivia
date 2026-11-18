@@ -8,6 +8,7 @@ import '../data/new_reviewed_questions.dart';
 import '../data/new_sports_questions.dart';
 import '../data/question_banks/history_questions.dart';
 import '../data/question_banks/holidays_questions.dart';
+import '../data/question_banks/movies_core_questions.dart';
 import '../data/sample_questions.dart';
 import '../data/sports_history_additions.dart';
 import '../data/story_questions.dart';
@@ -35,8 +36,8 @@ class QuestionRepository {
       return holidaysQuestionBank[topic]?[level] ?? <Question>[];
     }
 
-    // Harry Potter remains stored in the legacy Harry Potter bank but is
-    // presented under Movies and Books in the current catalog.
+    // Harry Potter remains stored in the legacy Harry Potter bank but appears
+    // beneath Movies and Books in the current nested navigation.
     if (category == 'Movies' && harryPotterMovies.contains(topic)) {
       return _legacyQuestionsFor('Harry Potter', topic, level);
     }
@@ -45,7 +46,11 @@ class QuestionRepository {
       return _legacyQuestionsFor('Harry Potter', topic, level);
     }
 
-    // Existing Good Books content is presented under the renamed Books tile.
+    if (category == 'Movies' && moviesCoreQuestionBank.containsKey(topic)) {
+      return moviesCoreQuestionBank[topic]?[level] ?? <Question>[];
+    }
+
+    // Existing Good Books material is presented under the renamed Books tile.
     if (category == 'Books') {
       return _legacyQuestionsFor('Good Books', topic, level);
     }
