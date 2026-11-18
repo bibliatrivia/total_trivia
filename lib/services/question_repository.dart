@@ -6,6 +6,7 @@ import '../data/geography_misc_questions.dart';
 import '../data/new_reviewed_questions.dart';
 import '../data/new_sports_questions.dart';
 import '../data/question_banks/history_questions.dart';
+import '../data/question_banks/holidays_questions.dart';
 import '../data/sample_questions.dart';
 import '../data/sports_history_additions.dart';
 import '../data/story_questions.dart';
@@ -27,6 +28,10 @@ class QuestionRepository {
 
     if (category == 'History') {
       return historyQuestionBank[topic]?[level] ?? <Question>[];
+    }
+
+    if (category == 'Holidays') {
+      return holidaysQuestionBank[topic]?[level] ?? <Question>[];
     }
 
     if (category == 'Sports' && sportsHistoryAdditions.containsKey(topic)) {
