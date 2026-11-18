@@ -5,6 +5,7 @@ import '../data/expanded_questions.dart';
 import '../data/geography_misc_questions.dart';
 import '../data/new_reviewed_questions.dart';
 import '../data/new_sports_questions.dart';
+import '../data/question_banks/history_questions.dart';
 import '../data/sample_questions.dart';
 import '../data/sports_history_additions.dart';
 import '../data/story_questions.dart';
@@ -19,6 +20,15 @@ class QuestionRepository {
     String topic,
     String level,
   ) {
+    if (category == 'Geography') {
+      return geographyMiscQuestionBanks['Geography']?[topic]?[level] ??
+          <Question>[];
+    }
+
+    if (category == 'History') {
+      return historyQuestionBank[topic]?[level] ?? <Question>[];
+    }
+
     if (category == 'Sports' && sportsHistoryAdditions.containsKey(topic)) {
       final added = sportsHistoryAdditions[topic]?[level] ?? <Question>[];
       final original =
@@ -42,9 +52,6 @@ class QuestionRepository {
         ...?bibleExpandedQuestions[topic]?[level],
       ];
     }
-
-    final geo = geographyMiscQuestionBanks[category]?[topic]?[level];
-    if (geo != null && geo.isNotEmpty) return geo;
 
     final sports = newSportsQuestionBanks[category]?[topic]?[level];
     if (sports != null && sports.isNotEmpty) return sports;
