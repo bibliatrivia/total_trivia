@@ -6,10 +6,12 @@ import 'package:total_trivia/services/question_repository.dart';
 String _location(String category, String topic, String level, int index) =>
     '$category > $topic > $level > question ${index + 1}';
 
-// Normalize for duplicate comparisons without stripping Unicode content such as
-// flags, accented characters, curly quotes, or other meaningful symbols.
 String _normalize(String value) => value
     .toLowerCase()
+    .trim()
+    .replaceAll(RegExp(r'[\u2018\u2019\u201B\u2032]'), "'")
+    .replaceAll(RegExp(r'[\u201C\u201D\u201F\u2033]'), '"')
+    .replaceAll(RegExp(r'[^\p{L}\p{N}\p{S}]+', unicode: true), ' ')
     .trim()
     .replaceAll(RegExp(r'\s+'), ' ');
 
@@ -57,8 +59,7 @@ void main() {
                 reason: '$where has a blank answer at index $answerIndex.');
           }
 
-          final normalizedAnswers = question.answers.map(_normalize).toSet();
-          expect(normalizedAnswers.length, 4,
+          expect(question.answers.map(_normalize).toSet().length, 4,
               reason: '$where contains duplicate answer choices.');
         }
       }
@@ -85,7 +86,7 @@ void main() {
       }
     });
 
-    test('repository enumerates every catalog level safely', () {
+    test('every catalog level can be enumerated safely', () {
       for (final pool in _allPools()) {
         expect(pool.questions.length, greaterThanOrEqualTo(0),
             reason:
