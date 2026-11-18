@@ -8,25 +8,42 @@ import '../data/new_reviewed_questions.dart';
 import '../data/new_sports_questions.dart';
 import '../data/question_banks/history_questions.dart';
 import '../data/question_banks/holidays_questions.dart';
-import '../data/question_banks/movies_core_questions.dart';
+import '../data/question_banks/harry_potter_movies_1_4_questions.dart';
+import '../data/question_banks/harry_potter_movies_5_8_questions.dart';
 import '../data/question_banks/movies_genres_studios_questions.dart';
+import '../data/question_banks/movies_core_questions.dart';
 import '../data/sample_questions.dart';
 import '../data/sports_history_additions.dart';
 import '../data/story_questions.dart';
 import '../models/question.dart';
 
+/// Central source for the exact question pools served by Total Trivia.
 class QuestionRepository {
   const QuestionRepository._();
 
-  static List<Question> questionsFor(String category, String topic, String level) {
+  static List<Question> questionsFor(
+    String category,
+    String topic,
+    String level,
+  ) {
     if (category == 'Geography') {
-      return geographyMiscQuestionBanks['Geography']?[topic]?[level] ?? <Question>[];
+      return geographyMiscQuestionBanks['Geography']?[topic]?[level] ??
+          <Question>[];
     }
+
     if (category == 'History') {
       return historyQuestionBank[topic]?[level] ?? <Question>[];
     }
+
     if (category == 'Holidays') {
       return holidaysQuestionBank[topic]?[level] ?? <Question>[];
+    }
+
+    if (category == 'Movies' && harryPotterMovies1to4QuestionBank.containsKey(topic)) {
+      return harryPotterMovies1to4QuestionBank[topic]?[level] ?? <Question>[];
+    }
+    if (category == 'Movies' && harryPotterMovies5to8QuestionBank.containsKey(topic)) {
+      return harryPotterMovies5to8QuestionBank[topic]?[level] ?? <Question>[];
     }
     if (category == 'Movies' && harryPotterMovies.contains(topic)) {
       return _legacyQuestionsFor('Harry Potter', topic, level);
@@ -49,25 +66,37 @@ class QuestionRepository {
   static List<Question> _legacyQuestionsFor(String category, String topic, String level) {
     if (category == 'Sports' && sportsHistoryAdditions.containsKey(topic)) {
       final added = sportsHistoryAdditions[topic]?[level] ?? <Question>[];
-      final original = expandedQuestionBanks[category]?[topic]?[level] ?? <Question>[];
+      final original =
+          expandedQuestionBanks[category]?[topic]?[level] ?? <Question>[];
       return [...original, ...added];
     }
+
     final additions = curatedAdditions[category]?[topic]?[level];
     if (additions != null && additions.isNotEmpty) {
-      final original = newReviewedQuestionBanks[category]?[topic]?[level] ?? <Question>[];
+      final original =
+          newReviewedQuestionBanks[category]?[topic]?[level] ?? <Question>[];
       return [...original, ...additions];
     }
+
     final carols = christmasCarolsQuestionBanks[category]?[topic]?[level];
     if (carols != null && carols.isNotEmpty) return carols;
+
     if (category == 'Bible') {
-      return [...?storyQuestionBanks[topic]?[level], ...?bibleExpandedQuestions[topic]?[level]];
+      return [
+        ...?storyQuestionBanks[topic]?[level],
+        ...?bibleExpandedQuestions[topic]?[level],
+      ];
     }
+
     final sports = newSportsQuestionBanks[category]?[topic]?[level];
     if (sports != null && sports.isNotEmpty) return sports;
+
     final reviewed = newReviewedQuestionBanks[category]?[topic]?[level];
     if (reviewed != null && reviewed.isNotEmpty) return reviewed;
+
     final expanded = expandedQuestionBanks[category]?[topic]?[level];
     if (expanded != null && expanded.isNotEmpty) return expanded;
+
     return sampleQuestionBanks[category]?[topic]?[level] ?? <Question>[];
   }
 }
