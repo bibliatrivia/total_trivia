@@ -11,6 +11,7 @@ import '../data/question_banks/holidays_questions.dart';
 import '../data/question_banks/books_core_questions.dart';
 import '../data/question_banks/harry_potter_movies_1_4_questions.dart';
 import '../data/question_banks/harry_potter_movies_5_8_questions.dart';
+import '../data/question_banks/harry_potter_books_questions.dart';
 import '../data/question_banks/movies_genres_studios_questions.dart';
 import '../data/question_banks/movies_core_questions.dart';
 import '../data/sample_questions.dart';
@@ -49,8 +50,8 @@ class QuestionRepository {
     if (category == 'Movies' && harryPotterMovies.contains(topic)) {
       return _legacyQuestionsFor('Harry Potter', topic, level);
     }
-    if (category == 'Books' && harryPotterBooks.contains(topic)) {
-      return _legacyQuestionsFor('Harry Potter', topic, level);
+    if (category == 'Books' && harryPotterBooksQuestionBank.containsKey(topic)) {
+      return harryPotterBooksQuestionBank[topic]?[level] ?? <Question>[];
     }
     if (category == 'Books' && booksCoreQuestionBank.containsKey(topic)) {
       return booksCoreQuestionBank[topic]?[level] ?? <Question>[];

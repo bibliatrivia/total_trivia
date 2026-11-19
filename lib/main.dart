@@ -362,7 +362,9 @@ class CategoriesScreen extends StatelessWidget {
         trailing: const Icon(Icons.chevron_right),
         onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const AchievementsScreen())),
       )),
-      ...categories.map((category) => Card(child: ListTile(
+      ...([...categories]..sort(
+        (a, b) => a.title.toLowerCase().compareTo(b.title.toLowerCase()),
+      )).map((category) => Card(child: ListTile(
         contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
         leading: Text(category.icon, style: const TextStyle(fontSize: 30)),
         title: Text(category.title, style: const TextStyle(fontSize: 19, fontWeight: FontWeight.bold)),
