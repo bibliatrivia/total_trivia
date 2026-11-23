@@ -42,7 +42,8 @@ class ProgressService {
 
   static Future<void> resetAll() async {
     final prefs = await _prefs();
-    final progressKeys = prefs.getKeys()
+    final progressKeys = prefs
+        .getKeys()
         .where((key) => key.startsWith(_prefix))
         .toList(growable: false);
 

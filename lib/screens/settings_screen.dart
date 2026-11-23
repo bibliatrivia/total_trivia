@@ -31,9 +31,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             child: const Text('CANCEL'),
           ),
           FilledButton(
-            style: FilledButton.styleFrom(
-              backgroundColor: Colors.red.shade700,
-            ),
+            style: FilledButton.styleFrom(backgroundColor: Colors.red.shade700),
             onPressed: () => Navigator.pop(dialogContext, true),
             child: const Text('RESET EVERYTHING'),
           ),
@@ -49,68 +47,68 @@ class _SettingsScreenState extends State<SettingsScreen> {
     setState(() => _resetting = false);
 
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('All Total Trivia progress has been reset.')),
+      const SnackBar(
+        content: Text('All Total Trivia progress has been reset.'),
+      ),
     );
   }
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        backgroundColor: cream,
-        appBar: AppBar(
-          title: const Text('Settings'),
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.home),
-              tooltip: 'Home',
-              onPressed: () =>
-                  Navigator.of(context).popUntil((route) => route.isFirst),
+    backgroundColor: cream,
+    appBar: AppBar(
+      title: const Text('Settings'),
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.home),
+          tooltip: 'Home',
+          onPressed: () =>
+              Navigator.of(context).popUntil((route) => route.isFirst),
+        ),
+      ],
+    ),
+    body: SafeArea(
+      child: ListView(
+        padding: const EdgeInsets.all(20),
+        children: [
+          const Text(
+            'Progress & Data',
+            style: TextStyle(
+              color: green,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
             ),
-          ],
-        ),
-        body: SafeArea(
-          child: ListView(
-            padding: const EdgeInsets.all(20),
-            children: [
-              const Text(
-                'Progress & Data',
-                style: TextStyle(
-                  color: green,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 12),
-              const Text(
-                'Your trivia progress is stored locally on this device.',
-              ),
-              const SizedBox(height: 20),
-              Card(
-                child: ListTile(
-                  leading: Icon(
-                    Icons.delete_forever,
-                    color: Colors.red.shade700,
-                    size: 30,
-                  ),
-                  title: const Text(
-                    'Reset Progress',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  subtitle: const Text(
-                    'Erase best scores, attempts, perfect scores, progress, '
-                    'and achievements.',
-                  ),
-                  trailing: _resetting
-                      ? const SizedBox(
-                          width: 22,
-                          height: 22,
-                          child: CircularProgressIndicator(strokeWidth: 2),
-                        )
-                      : const Icon(Icons.chevron_right),
-                  onTap: _resetting ? null : _confirmReset,
-                ),
-              ),
-            ],
           ),
-        ),
-      );
+          const SizedBox(height: 12),
+          const Text('Your trivia progress is stored locally on this device.'),
+          const SizedBox(height: 20),
+          Card(
+            child: ListTile(
+              leading: Icon(
+                Icons.delete_forever,
+                color: Colors.red.shade700,
+                size: 30,
+              ),
+              title: const Text(
+                'Reset Progress',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              subtitle: const Text(
+                'Erase best scores, attempts, perfect scores, progress, '
+                'and achievements.',
+              ),
+              trailing: _resetting
+                  ? const SizedBox(
+                      width: 22,
+                      height: 22,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
+                  : const Icon(Icons.chevron_right),
+              onTap: _resetting ? null : _confirmReset,
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
 }

@@ -15,7 +15,8 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
         question: "Which city did the Athletics play in immediately before moving to Oakland?",
         answers: ["Kansas City", "St. Louis", "Cleveland", "Milwaukee"],
         correctAnswer: 0,
-        explanation: "The Athletics played in Kansas City from 1955 through 1967.",
+        explanation:
+            "The Athletics played in Kansas City from 1955 through 1967.",
       ),
       Question(
         question: "Which baseball legend was known as the Say Hey Kid?",
@@ -25,37 +26,67 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Which team did Babe Ruth play for immediately before joining the New York Yankees?",
-        answers: ["Philadelphia Athletics", "Chicago Cubs", "Boston Red Sox", "Brooklyn Dodgers"],
+        answers: [
+          "Philadelphia Athletics",
+          "Chicago Cubs",
+          "Boston Red Sox",
+          "Brooklyn Dodgers",
+        ],
         correctAnswer: 2,
         explanation: "Ruth was traded by the Red Sox to the Yankees after the 1919 season.",
       ),
       Question(
         question: "Who became the first player unanimously elected to the Baseball Hall of Fame in 2019?",
-        answers: ["Derek Jeter", "Ken Griffey Jr.", "Pedro Martínez", "Mariano Rivera"],
+        answers: [
+          "Derek Jeter",
+          "Ken Griffey Jr.",
+          "Pedro Martínez",
+          "Mariano Rivera",
+        ],
         correctAnswer: 3,
         explanation: "Mariano Rivera was named on every ballot in the 2019 Hall of Fame election.",
       ),
       Question(
         question: "Which Hall of Fame hitter was nicknamed Mr. Padre?",
-        answers: ["Tony Gwynn", "Cal Ripken Jr.", "Wade Boggs", "Kirby Puckett"],
+        answers: [
+          "Tony Gwynn",
+          "Cal Ripken Jr.",
+          "Wade Boggs",
+          "Kirby Puckett",
+        ],
         correctAnswer: 0,
         explanation: "Tony Gwynn spent his entire MLB career with San Diego and was known as Mr. Padre.",
       ),
       Question(
         question: "Which team won the 1986 World Series after a dramatic comeback against Boston?",
-        answers: ["St. Louis Cardinals", "New York Mets", "New York Yankees", "Los Angeles Dodgers"],
+        answers: [
+          "St. Louis Cardinals",
+          "New York Mets",
+          "New York Yankees",
+          "Los Angeles Dodgers",
+        ],
         correctAnswer: 1,
         explanation: "The Mets defeated the Red Sox in seven games in the 1986 World Series.",
       ),
       Question(
         question: "Which player broke Roger Maris's single-season home run record in 1998?",
-        answers: ["Sammy Sosa", "Ken Griffey Jr.", "Mark McGwire", "Barry Bonds"],
+        answers: [
+          "Sammy Sosa",
+          "Ken Griffey Jr.",
+          "Mark McGwire",
+          "Barry Bonds",
+        ],
         correctAnswer: 2,
         explanation: "McGwire hit 70 home runs in 1998, surpassing Maris's 61.",
       ),
       Question(
         question: "Who was nicknamed Mr. October for his postseason hitting?",
-        answers: ["David Ortiz", "Derek Jeter", "Joe DiMaggio", "Reggie Jackson"],
+        answers: [
+          "David Ortiz",
+          "Derek Jeter",
+          "Joe DiMaggio",
+          "Reggie Jackson",
+        ],
         correctAnswer: 3,
         explanation: "Reggie Jackson earned the nickname Mr. October for his October postseason performances.",
       ),
@@ -69,13 +100,23 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
     "Medium": [
       Question(
         question: "Which team defeated the Pittsburgh Pirates in the first modern World Series in 1903?",
-        answers: ["New York Giants", "Philadelphia Athletics", "Chicago White Sox", "Boston Americans"],
+        answers: [
+          "New York Giants",
+          "Philadelphia Athletics",
+          "Chicago White Sox",
+          "Boston Americans",
+        ],
         correctAnswer: 3,
         explanation: "The Boston Americans defeated Pittsburgh five games to three in 1903.",
       ),
       Question(
         question: "Which pitcher set the modern-era MLB single-season strikeout record with 383 in 1973?",
-        answers: ["Nolan Ryan", "Randy Johnson", "Sandy Koufax", "Steve Carlton"],
+        answers: [
+          "Nolan Ryan",
+          "Randy Johnson",
+          "Sandy Koufax",
+          "Steve Carlton",
+        ],
         correctAnswer: 0,
         explanation: "Nolan Ryan struck out 383 batters for the California Angels in 1973.",
       ),
@@ -87,103 +128,195 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Which player won the 1978 American League MVP award with Boston after hitting 46 home runs?",
-        answers: ["Carl Yastrzemski", "Reggie Jackson", "Jim Rice", "Fred Lynn"],
+        answers: [
+          "Carl Yastrzemski",
+          "Reggie Jackson",
+          "Jim Rice",
+          "Fred Lynn",
+        ],
         correctAnswer: 2,
-        explanation: "Jim Rice won the 1978 AL MVP award after hitting 46 home runs.",
+        explanation:
+            "Jim Rice won the 1978 AL MVP award after hitting 46 home runs.",
       ),
       Question(
         question: "Which team became the first expansion franchise to win the World Series in 1969?",
-        answers: ["Kansas City Royals", "Toronto Blue Jays", "San Diego Padres", "New York Mets"],
+        answers: [
+          "Kansas City Royals",
+          "Toronto Blue Jays",
+          "San Diego Padres",
+          "New York Mets",
+        ],
         correctAnswer: 3,
         explanation: "Founded in 1962, the Mets became the first expansion team to win a World Series.",
       ),
       Question(
-        question: "Who became the first Black player in the American League in 1947?",
-        answers: ["Larry Doby", "Jackie Robinson", "Satchel Paige", "Monte Irvin"],
+        question:
+            "Who became the first Black player in the American League in 1947?",
+        answers: [
+          "Larry Doby",
+          "Jackie Robinson",
+          "Satchel Paige",
+          "Monte Irvin",
+        ],
         correctAnswer: 0,
-        explanation: "Larry Doby debuted for the Cleveland Indians in July 1947.",
+        explanation:
+            "Larry Doby debuted for the Cleveland Indians in July 1947.",
       ),
       Question(
         question: "Which player was the first designated hitter in an American League regular-season game in 1973?",
-        answers: ["Edgar Martinez", "Ron Blomberg", "David Ortiz", "Frank Thomas"],
+        answers: [
+          "Edgar Martinez",
+          "Ron Blomberg",
+          "David Ortiz",
+          "Frank Thomas",
+        ],
         correctAnswer: 1,
         explanation: "Ron Blomberg of the Yankees was the first designated hitter to bat in an AL game.",
       ),
       Question(
         question: "Which team won back-to-back World Series in 1992 and 1993?",
-        answers: ["Minnesota Twins", "Oakland Athletics", "Toronto Blue Jays", "Atlanta Braves"],
+        answers: [
+          "Minnesota Twins",
+          "Oakland Athletics",
+          "Toronto Blue Jays",
+          "Atlanta Braves",
+        ],
         correctAnswer: 2,
         explanation: "Toronto won the World Series in both 1992 and 1993.",
       ),
       Question(
         question: "Which pitcher became the first MLB player to win the Cy Young Award in both leagues?",
-        answers: ["Roger Clemens", "Randy Johnson", "Pedro Martínez", "Gaylord Perry"],
+        answers: [
+          "Roger Clemens",
+          "Randy Johnson",
+          "Pedro Martínez",
+          "Gaylord Perry",
+        ],
         correctAnswer: 3,
-        explanation: "Gaylord Perry won the award in the AL in 1972 and NL in 1978.",
+        explanation:
+            "Gaylord Perry won the award in the AL in 1972 and NL in 1978.",
       ),
       Question(
         question: "Which ballpark first opened in 1912 and remained the home of the Boston Red Sox?",
-        answers: ["Fenway Park", "Wrigley Field", "Yankee Stadium", "Forbes Field"],
+        answers: [
+          "Fenway Park",
+          "Wrigley Field",
+          "Yankee Stadium",
+          "Forbes Field",
+        ],
         correctAnswer: 0,
         explanation: "Fenway Park opened in April 1912.",
       ),
       Question(
         question: "Which hitter won the American League Triple Crown in 2012?",
-        answers: ["Josh Hamilton", "Miguel Cabrera", "Mike Trout", "Albert Pujols"],
+        answers: [
+          "Josh Hamilton",
+          "Miguel Cabrera",
+          "Mike Trout",
+          "Albert Pujols",
+        ],
         correctAnswer: 1,
         explanation: "Miguel Cabrera led the AL in batting average, home runs and runs batted in in 2012.",
       ),
       Question(
         question: "Which team was defeated by the Cincinnati Reds in the 1975 World Series?",
-        answers: ["New York Mets", "New York Yankees", "Boston Red Sox", "Oakland Athletics"],
+        answers: [
+          "New York Mets",
+          "New York Yankees",
+          "Boston Red Sox",
+          "Oakland Athletics",
+        ],
         correctAnswer: 2,
         explanation: "Cincinnati defeated Boston in seven games in 1975.",
       ),
       Question(
-        question: "Which player stole a then-record 130 bases in the 1982 season?",
-        answers: ["Lou Brock", "Vince Coleman", "Tim Raines", "Rickey Henderson"],
+        question:
+            "Which player stole a then-record 130 bases in the 1982 season?",
+        answers: [
+          "Lou Brock",
+          "Vince Coleman",
+          "Tim Raines",
+          "Rickey Henderson",
+        ],
         correctAnswer: 3,
         explanation: "Rickey Henderson stole 130 bases for Oakland in 1982.",
       ),
       Question(
         question: "Which team won the 2001 World Series on a walk-off hit by Luis Gonzalez?",
-        answers: ["Arizona Diamondbacks", "New York Yankees", "Seattle Mariners", "San Francisco Giants"],
+        answers: [
+          "Arizona Diamondbacks",
+          "New York Yankees",
+          "Seattle Mariners",
+          "San Francisco Giants",
+        ],
         correctAnswer: 0,
         explanation: "Luis Gonzalez's hit off Mariano Rivera gave Arizona the 2001 championship.",
       ),
       Question(
         question: "Who managed the Oakland Athletics during their three straight World Series victories from 1972 to 1974?",
-        answers: ["Joe Torre and Sparky Anderson", "Dick Williams and Alvin Dark", "Tony La Russa and Bob Melvin", "Billy Martin and Connie Mack"],
+        answers: [
+          "Joe Torre and Sparky Anderson",
+          "Dick Williams and Alvin Dark",
+          "Tony La Russa and Bob Melvin",
+          "Billy Martin and Connie Mack",
+        ],
         correctAnswer: 1,
         explanation: "Dick Williams managed the 1972–73 champions; Alvin Dark managed the 1974 team.",
       ),
       Question(
-        question: "Who broke the all-time MLB stolen-base record held by Lou Brock?",
-        answers: ["Maury Wills", "Vince Coleman", "Rickey Henderson", "Tim Raines"],
+        question:
+            "Who broke the all-time MLB stolen-base record held by Lou Brock?",
+        answers: [
+          "Maury Wills",
+          "Vince Coleman",
+          "Rickey Henderson",
+          "Tim Raines",
+        ],
         correctAnswer: 2,
         explanation: "Rickey Henderson passed Brock's career total of 938 steals in 1991.",
       ),
       Question(
         question: "Which team won the 1991 World Series in seven games against Atlanta?",
-        answers: ["Oakland Athletics", "Toronto Blue Jays", "Pittsburgh Pirates", "Minnesota Twins"],
+        answers: [
+          "Oakland Athletics",
+          "Toronto Blue Jays",
+          "Pittsburgh Pirates",
+          "Minnesota Twins",
+        ],
         correctAnswer: 3,
         explanation: "The Twins defeated the Braves in the 1991 World Series.",
       ),
       Question(
         question: "What was the original name of the franchise later known as the New York Mets?",
-        answers: ["An expansion team founded as the Mets", "The Brooklyn Robins", "The New York Highlanders", "The Washington Senators"],
+        answers: [
+          "An expansion team founded as the Mets",
+          "The Brooklyn Robins",
+          "The New York Highlanders",
+          "The Washington Senators",
+        ],
         correctAnswer: 0,
         explanation: "The New York Mets were founded in 1962 under the Mets name, rather than relocating from an older team.",
       ),
       Question(
         question: "Which player won the National League MVP award four consecutive years, from 2001 through 2004?",
-        answers: ["Mike Schmidt", "Barry Bonds", "Albert Pujols", "Willie Mays"],
+        answers: [
+          "Mike Schmidt",
+          "Barry Bonds",
+          "Albert Pujols",
+          "Willie Mays",
+        ],
         correctAnswer: 1,
         explanation: "Barry Bonds won four straight National League MVP awards from 2001 to 2004.",
       ),
       Question(
-        question: "Who won the first major-league Rookie of the Year award in 1947?",
-        answers: ["Larry Doby", "Roy Campanella", "Jackie Robinson", "Gil Hodges"],
+        question:
+            "Who won the first major-league Rookie of the Year award in 1947?",
+        answers: [
+          "Larry Doby",
+          "Roy Campanella",
+          "Jackie Robinson",
+          "Gil Hodges",
+        ],
         correctAnswer: 2,
         explanation: "Jackie Robinson won the inaugural major-league Rookie of the Year award in 1947; the award was later named in his honor.",
       ),
@@ -197,21 +330,37 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Which team hired Frank Robinson as MLB’s first Black manager in 1975?",
-        answers: ["Cleveland Indians", "San Francisco Giants", "Montreal Expos", "Cincinnati Reds"],
+        answers: [
+          "Cleveland Indians",
+          "San Francisco Giants",
+          "Montreal Expos",
+          "Cincinnati Reds",
+        ],
         correctAnswer: 0,
         explanation: "Frank Robinson became MLB’s first Black manager with Cleveland in 1975.",
       ),
       Question(
         question: "Which player hit the only walk-off home run in a Game 7 of a World Series before 2020?",
-        answers: ["Bobby Thomson", "Bill Mazeroski", "Kirk Gibson", "Joe Carter"],
+        answers: [
+          "Bobby Thomson",
+          "Bill Mazeroski",
+          "Kirk Gibson",
+          "Joe Carter",
+        ],
         correctAnswer: 1,
         explanation: "Bill Mazeroski's homer won Game 7 of the 1960 World Series for Pittsburgh.",
       ),
       Question(
         question: "Which team did the Brooklyn Dodgers defeat to win their first World Series title in 1955?",
-        answers: ["Boston Red Sox", "Chicago White Sox", "New York Yankees", "New York Giants"],
+        answers: [
+          "Boston Red Sox",
+          "Chicago White Sox",
+          "New York Yankees",
+          "New York Giants",
+        ],
         correctAnswer: 2,
-        explanation: "Brooklyn finally beat the Yankees in seven games in 1955.",
+        explanation:
+            "Brooklyn finally beat the Yankees in seven games in 1955.",
       ),
       Question(
         question: "Who won the 1908 National League batting title with a .354 average?",
@@ -221,7 +370,12 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Who set the MLB career complete-games record with 749?",
-        answers: ["Cy Young", "Walter Johnson", "Christy Mathewson", "Grover Cleveland Alexander"],
+        answers: [
+          "Cy Young",
+          "Walter Johnson",
+          "Christy Mathewson",
+          "Grover Cleveland Alexander",
+        ],
         correctAnswer: 0,
         explanation: "Cy Young is credited with 749 complete games in MLB's historical records.",
       ),
@@ -233,7 +387,12 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Which team was first to win three consecutive World Series titles in the expansion era (1961 onward)?",
-        answers: ["Cincinnati Reds", "Baltimore Orioles", "Oakland Athletics", "New York Yankees"],
+        answers: [
+          "Cincinnati Reds",
+          "Baltimore Orioles",
+          "Oakland Athletics",
+          "New York Yankees",
+        ],
         correctAnswer: 2,
         explanation: "Oakland won three straight from 1972 through 1974.",
       ),
@@ -245,45 +404,77 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Which AL franchise set a then-record 116 regular-season wins in 2001?",
-        answers: ["Seattle Mariners", "New York Yankees", "Oakland Athletics", "Boston Red Sox"],
+        answers: [
+          "Seattle Mariners",
+          "New York Yankees",
+          "Oakland Athletics",
+          "Boston Red Sox",
+        ],
         correctAnswer: 0,
-        explanation: "Seattle matched the MLB single-season record of 116 wins in 2001.",
+        explanation:
+            "Seattle matched the MLB single-season record of 116 wins in 2001.",
       ),
       Question(
         question: "Which team won the last World Series played before the players' strike canceled the 1994 postseason?",
-        answers: ["Philadelphia Phillies", "Toronto Blue Jays", "Minnesota Twins", "Atlanta Braves"],
+        answers: [
+          "Philadelphia Phillies",
+          "Toronto Blue Jays",
+          "Minnesota Twins",
+          "Atlanta Braves",
+        ],
         correctAnswer: 1,
         explanation: "Toronto won the 1993 World Series; the 1994 World Series was canceled.",
       ),
       Question(
-        question: "Which player won the first MLB World Series MVP award in 1955?",
-        answers: ["Roy Campanella", "Duke Snider", "Johnny Podres", "Sandy Koufax"],
+        question:
+            "Which player won the first MLB World Series MVP award in 1955?",
+        answers: [
+          "Roy Campanella",
+          "Duke Snider",
+          "Johnny Podres",
+          "Sandy Koufax",
+        ],
         correctAnswer: 2,
-        explanation: "Johnny Podres won the inaugural World Series MVP in 1955.",
+        explanation:
+            "Johnny Podres won the inaugural World Series MVP in 1955.",
       ),
       Question(
         question: "Which Cleveland pitcher threw a perfect game against Toronto in May 1981?",
         answers: ["Nolan Ryan", "Randy Johnson", "Hideo Nomo", "Len Barker"],
         correctAnswer: 3,
-        explanation: "Len Barker pitched a perfect game for Cleveland on May 15, 1981.",
+        explanation:
+            "Len Barker pitched a perfect game for Cleveland on May 15, 1981.",
       ),
       Question(
-        question: "Which catcher won the 1972 NL MVP award with the Cincinnati Reds?",
+        question:
+            "Which catcher won the 1972 NL MVP award with the Cincinnati Reds?",
         answers: ["Johnny Bench", "Gary Carter", "Joe Torre", "Ted Simmons"],
         correctAnswer: 0,
-        explanation: "Johnny Bench won the 1972 NL MVP award as Cincinnati's catcher.",
+        explanation:
+            "Johnny Bench won the 1972 NL MVP award as Cincinnati's catcher.",
       ),
       Question(
         question: "Which team was the first non-U.S.-based MLB franchise to win a World Series?",
-        answers: ["San Diego Padres", "Toronto Blue Jays", "Montreal Expos", "Seattle Mariners"],
+        answers: [
+          "San Diego Padres",
+          "Toronto Blue Jays",
+          "Montreal Expos",
+          "Seattle Mariners",
+        ],
         correctAnswer: 1,
         explanation: "Toronto became the first Canadian franchise to win the title in 1992.",
       ),
       Question(
         question: "Which Cardinals pitcher set a World Series record with 17 strikeouts in Game 1 in 1968?",
-        answers: ["Mickey Lolich", "Steve Carlton", "Bob Gibson", "Denny McLain"],
+        answers: [
+          "Mickey Lolich",
+          "Steve Carlton",
+          "Bob Gibson",
+          "Denny McLain",
+        ],
         correctAnswer: 2,
-        explanation: "Bob Gibson struck out 17 Detroit batters in Game 1 in 1968.",
+        explanation:
+            "Bob Gibson struck out 17 Detroit batters in Game 1 in 1968.",
       ),
       Question(
         question: "Which Red Sox player hit a famous walk-off home run in Game 6 of the 1975 World Series?",
@@ -305,7 +496,12 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Who became the first player to enter the Baseball Hall of Fame with a Seattle Mariners cap on his plaque?",
-        answers: ["Randy Johnson", "Ichiro Suzuki", "Ken Griffey Jr.", "Edgar Martínez"],
+        answers: [
+          "Randy Johnson",
+          "Ichiro Suzuki",
+          "Ken Griffey Jr.",
+          "Edgar Martínez",
+        ],
         correctAnswer: 2,
         explanation: "Ken Griffey Jr. entered the Hall of Fame in 2016 with a Mariners cap.",
       ),
@@ -315,49 +511,92 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
     "Easy": [
       Question(
         question: "Which player captained the Edmonton Oilers to four Stanley Cups during the 1980s?",
-        answers: ["Mario Lemieux", "Sidney Crosby", "Mark Messier", "Wayne Gretzky"],
+        answers: [
+          "Mario Lemieux",
+          "Sidney Crosby",
+          "Mark Messier",
+          "Wayne Gretzky",
+        ],
         correctAnswer: 3,
         explanation: "Wayne Gretzky captained the Oilers in the 1980s championship years.",
       ),
       Question(
-        question: "Which team won the Stanley Cup in 1994, ending a 54-year drought?",
-        answers: ["New York Rangers", "Toronto Maple Leafs", "New York Islanders", "Boston Bruins"],
+        question:
+            "Which team won the Stanley Cup in 1994, ending a 54-year drought?",
+        answers: [
+          "New York Rangers",
+          "Toronto Maple Leafs",
+          "New York Islanders",
+          "Boston Bruins",
+        ],
         correctAnswer: 0,
-        explanation: "The Rangers won their first Stanley Cup since 1940 in 1994.",
+        explanation:
+            "The Rangers won their first Stanley Cup since 1940 in 1994.",
       ),
       Question(
         question: "Which star led the Pittsburgh Penguins to Stanley Cups in 1991 and 1992?",
-        answers: ["Paul Coffey", "Mario Lemieux", "Jaromír Jágr", "Ron Francis"],
+        answers: [
+          "Paul Coffey",
+          "Mario Lemieux",
+          "Jaromír Jágr",
+          "Ron Francis",
+        ],
         correctAnswer: 1,
         explanation: "Mario Lemieux was Pittsburgh's captain and leader for the 1991 and 1992 titles.",
       ),
       Question(
         question: "Who scored the golden goal for Canada in the men's 2010 Olympic hockey final?",
-        answers: ["Jarome Iginla", "Ryan Getzlaf", "Sidney Crosby", "Jonathan Toews"],
+        answers: [
+          "Jarome Iginla",
+          "Ryan Getzlaf",
+          "Sidney Crosby",
+          "Jonathan Toews",
+        ],
         correctAnswer: 2,
         explanation: "Crosby scored the overtime winner against the United States in Vancouver.",
       ),
       Question(
         question: "Which NHL club plays its home games in Las Vegas?",
-        answers: ["Arizona Coyotes", "San Jose Sharks", "Los Angeles Kings", "Vegas Golden Knights"],
+        answers: [
+          "Arizona Coyotes",
+          "San Jose Sharks",
+          "Los Angeles Kings",
+          "Vegas Golden Knights",
+        ],
         correctAnswer: 3,
         explanation: "The Vegas Golden Knights joined the NHL as an expansion team in 2017.",
       ),
       Question(
         question: "Which franchise won its first Stanley Cup in 2019?",
-        answers: ["St. Louis Blues", "Nashville Predators", "Minnesota Wild", "Columbus Blue Jackets"],
+        answers: [
+          "St. Louis Blues",
+          "Nashville Predators",
+          "Minnesota Wild",
+          "Columbus Blue Jackets",
+        ],
         correctAnswer: 0,
         explanation: "St. Louis won its first championship in 2019.",
       ),
       Question(
         question: "Who was the longtime goalie known as The Dominator?",
-        answers: ["Ed Belfour", "Dominik Hašek", "Patrick Roy", "Martin Brodeur"],
+        answers: [
+          "Ed Belfour",
+          "Dominik Hašek",
+          "Patrick Roy",
+          "Martin Brodeur",
+        ],
         correctAnswer: 1,
         explanation: "Dominik Hašek was nicknamed The Dominator.",
       ),
       Question(
-        question: "What was the first NHL team based in Seattle, introduced in 2021?",
-        answers: ["Seattle Metropolitans", "Seattle Mariners", "Seattle Kraken", "Seattle Thunderbirds"],
+        question:
+            "What was the first NHL team based in Seattle, introduced in 2021?",
+        answers: [
+          "Seattle Metropolitans",
+          "Seattle Mariners",
+          "Seattle Kraken",
+          "Seattle Thunderbirds",
+        ],
         correctAnswer: 2,
         explanation: "The Seattle Kraken began NHL play in 2021–22.",
       ),
@@ -369,47 +608,80 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Which Canadian team won the 1993 Stanley Cup, the last Canadian club to win it through 2025?",
-        answers: ["Montreal Canadiens", "Edmonton Oilers", "Vancouver Canucks", "Calgary Flames"],
+        answers: [
+          "Montreal Canadiens",
+          "Edmonton Oilers",
+          "Vancouver Canucks",
+          "Calgary Flames",
+        ],
         correctAnswer: 0,
         explanation: "Montreal captured the 1993 Stanley Cup.",
       ),
     ],
     "Medium": [
       Question(
-        question: "Who won the inaugural Conn Smythe Trophy for playoff MVP in 1965?",
+        question:
+            "Who won the inaugural Conn Smythe Trophy for playoff MVP in 1965?",
         answers: ["Bobby Orr", "Gordie Howe", "Phil Esposito", "Jean Béliveau"],
         correctAnswer: 3,
         explanation: "Montreal captain Jean Béliveau won the first Conn Smythe Trophy in 1965.",
       ),
       Question(
         question: "Which NHL team won the 1970 Stanley Cup after Bobby Orr's famous flying goal?",
-        answers: ["Boston Bruins", "Chicago Blackhawks", "Montreal Canadiens", "New York Rangers"],
+        answers: [
+          "Boston Bruins",
+          "Chicago Blackhawks",
+          "Montreal Canadiens",
+          "New York Rangers",
+        ],
         correctAnswer: 0,
         explanation: "Orr's overtime goal against St. Louis clinched Boston's title in 1970.",
       ),
       Question(
         question: "Who was the first NHL player to score 50 goals in 50 games in a season?",
-        answers: ["Brett Hull", "Maurice Richard", "Wayne Gretzky", "Mike Bossy"],
+        answers: [
+          "Brett Hull",
+          "Maurice Richard",
+          "Wayne Gretzky",
+          "Mike Bossy",
+        ],
         correctAnswer: 1,
         explanation: "Maurice Richard reached 50 goals in 50 games in 1944–45.",
       ),
       Question(
         question: "Which goaltender holds the NHL record for most regular-season career wins?",
-        answers: ["Marc-André Fleury", "Dominik Hašek", "Martin Brodeur", "Patrick Roy"],
+        answers: [
+          "Marc-André Fleury",
+          "Dominik Hašek",
+          "Martin Brodeur",
+          "Patrick Roy",
+        ],
         correctAnswer: 2,
-        explanation: "Martin Brodeur retired with 691 regular-season victories.",
+        explanation:
+            "Martin Brodeur retired with 691 regular-season victories.",
       ),
       Question(
         question: "Which team won back-to-back Stanley Cups in 1997 and 1998?",
-        answers: ["Dallas Stars", "New Jersey Devils", "Colorado Avalanche", "Detroit Red Wings"],
+        answers: [
+          "Dallas Stars",
+          "New Jersey Devils",
+          "Colorado Avalanche",
+          "Detroit Red Wings",
+        ],
         correctAnswer: 3,
         explanation: "The Red Wings won the Cup in 1997 and 1998.",
       ),
       Question(
         question: "Which New York Islanders scorer became the second player to record 50 goals in 50 games in 1980–81?",
-        answers: ["Mike Bossy", "Bryan Trottier", "Denis Potvin", "Clark Gillies"],
+        answers: [
+          "Mike Bossy",
+          "Bryan Trottier",
+          "Denis Potvin",
+          "Clark Gillies",
+        ],
         correctAnswer: 0,
-        explanation: "Mike Bossy scored 50 goals in the first 50 games in 1980–81.",
+        explanation:
+            "Mike Bossy scored 50 goals in the first 50 games in 1980–81.",
       ),
       Question(
         question: "Which Canadian city hosted the 1972 Summit Series games that opened the eight-game series?",
@@ -419,37 +691,66 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Which team defeated the Detroit Red Wings in the 1995 Stanley Cup Final?",
-        answers: ["Pittsburgh Penguins", "Philadelphia Flyers", "New Jersey Devils", "Colorado Avalanche"],
+        answers: [
+          "Pittsburgh Penguins",
+          "Philadelphia Flyers",
+          "New Jersey Devils",
+          "Colorado Avalanche",
+        ],
         correctAnswer: 2,
         explanation: "The Devils swept Detroit in 1995.",
       ),
       Question(
         question: "Which team won its first NHL Stanley Cup in 2004?",
-        answers: ["Carolina Hurricanes", "Anaheim Ducks", "Los Angeles Kings", "Tampa Bay Lightning"],
+        answers: [
+          "Carolina Hurricanes",
+          "Anaheim Ducks",
+          "Los Angeles Kings",
+          "Tampa Bay Lightning",
+        ],
         correctAnswer: 3,
         explanation: "The Lightning won their first Stanley Cup in 2004.",
       ),
       Question(
         question: "Which Canadian player scored the winning goal in the final game of the 1972 Summit Series?",
-        answers: ["Paul Henderson", "Bobby Clarke", "Phil Esposito", "Bobby Hull"],
+        answers: [
+          "Paul Henderson",
+          "Bobby Clarke",
+          "Phil Esposito",
+          "Bobby Hull",
+        ],
         correctAnswer: 0,
-        explanation: "Paul Henderson's late goal won Game 8 of the Summit Series.",
+        explanation:
+            "Paul Henderson's late goal won Game 8 of the Summit Series.",
       ),
       Question(
         question: "Who won the NHL's first official Calder Trophy for rookie of the year in 1937?",
         answers: ["Bill Cook", "Syl Apps", "Howie Morenz", "Nels Stewart"],
         correctAnswer: 1,
-        explanation: "Syl Apps received the first Calder Memorial Trophy in 1937.",
+        explanation:
+            "Syl Apps received the first Calder Memorial Trophy in 1937.",
       ),
       Question(
-        question: "Which player reached 1,000 NHL assists faster than anyone else?",
-        answers: ["Mark Messier", "Ron Francis", "Wayne Gretzky", "Mario Lemieux"],
+        question:
+            "Which player reached 1,000 NHL assists faster than anyone else?",
+        answers: [
+          "Mark Messier",
+          "Ron Francis",
+          "Wayne Gretzky",
+          "Mario Lemieux",
+        ],
         correctAnswer: 2,
-        explanation: "Wayne Gretzky is the fastest player to 1,000 NHL assists.",
+        explanation:
+            "Wayne Gretzky is the fastest player to 1,000 NHL assists.",
       ),
       Question(
         question: "Which team defeated Edmonton in the 2006 Stanley Cup Final?",
-        answers: ["Anaheim Ducks", "Ottawa Senators", "Buffalo Sabres", "Carolina Hurricanes"],
+        answers: [
+          "Anaheim Ducks",
+          "Ottawa Senators",
+          "Buffalo Sabres",
+          "Carolina Hurricanes",
+        ],
         correctAnswer: 3,
         explanation: "Carolina defeated Edmonton in seven games to win the 2006 Stanley Cup.",
       ),
@@ -457,25 +758,38 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
         question: "What city was the longtime home of the NHL franchise that became the Arizona Coyotes in 1996?",
         answers: ["Winnipeg", "Quebec City", "Hartford", "Kansas City"],
         correctAnswer: 0,
-        explanation: "The Winnipeg Jets franchise relocated to Phoenix in 1996.",
+        explanation:
+            "The Winnipeg Jets franchise relocated to Phoenix in 1996.",
       ),
       Question(
         question: "Which player won the Hart Trophy eight consecutive times from 1980 through 1987?",
         answers: ["Gordie Howe", "Wayne Gretzky", "Mario Lemieux", "Bobby Orr"],
         correctAnswer: 1,
-        explanation: "Gretzky won eight consecutive league MVP awards starting in 1980.",
+        explanation:
+            "Gretzky won eight consecutive league MVP awards starting in 1980.",
       ),
       Question(
         question: "Which team won the 2018 Stanley Cup for the first time in its history?",
-        answers: ["Winnipeg Jets", "Nashville Predators", "Washington Capitals", "Vegas Golden Knights"],
+        answers: [
+          "Winnipeg Jets",
+          "Nashville Predators",
+          "Washington Capitals",
+          "Vegas Golden Knights",
+        ],
         correctAnswer: 2,
         explanation: "Washington won its first Cup in 2018, defeating Vegas.",
       ),
       Question(
         question: "Which NHL franchise won back-to-back Stanley Cups in 2020 and 2021?",
-        answers: ["Florida Panthers", "Colorado Avalanche", "Boston Bruins", "Tampa Bay Lightning"],
+        answers: [
+          "Florida Panthers",
+          "Colorado Avalanche",
+          "Boston Bruins",
+          "Tampa Bay Lightning",
+        ],
         correctAnswer: 3,
-        explanation: "Tampa Bay won consecutive championships in 2020 and 2021.",
+        explanation:
+            "Tampa Bay won consecutive championships in 2020 and 2021.",
       ),
       Question(
         question: "Which hockey legend was called Mr. Hockey?",
@@ -485,7 +799,12 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Which player edged Wayne Gretzky for the NHL scoring title in 1979–80 by scoring more goals on equal points?",
-        answers: ["Mats Sundin", "Marcel Dionne", "Peter Šťastný", "Jaromír Jágr"],
+        answers: [
+          "Mats Sundin",
+          "Marcel Dionne",
+          "Peter Šťastný",
+          "Jaromír Jágr",
+        ],
         correctAnswer: 1,
         explanation: "Marcel Dionne won the Art Ross Trophy on a goal-scoring tiebreaker over Gretzky in 1979–80.",
       ),
@@ -499,7 +818,12 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
     "Hard": [
       Question(
         question: "Which Montreal Canadiens goalie won the Conn Smythe Trophy in his rookie season in 1986?",
-        answers: ["Ken Dryden", "Jacques Plante", "Michel Larocque", "Patrick Roy"],
+        answers: [
+          "Ken Dryden",
+          "Jacques Plante",
+          "Michel Larocque",
+          "Patrick Roy",
+        ],
         correctAnswer: 3,
         explanation: "Patrick Roy was named playoff MVP after leading Montreal to the Stanley Cup in 1986.",
       ),
@@ -511,19 +835,34 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Which team defeated the favored Montreal Canadiens in the 1919 Stanley Cup Final?",
-        answers: ["Toronto Arenas", "No champion was declared", "Seattle Metropolitans", "Ottawa Senators"],
+        answers: [
+          "Toronto Arenas",
+          "No champion was declared",
+          "Seattle Metropolitans",
+          "Ottawa Senators",
+        ],
         correctAnswer: 1,
         explanation: "The 1919 final was canceled due to influenza, and no Cup winner was declared.",
       ),
       Question(
         question: "Which American-born player was the first to score 50 goals in an NHL season?",
-        answers: ["Mike Modano", "Brian Leetch", "Joe Mullen", "Pat LaFontaine"],
+        answers: [
+          "Mike Modano",
+          "Brian Leetch",
+          "Joe Mullen",
+          "Pat LaFontaine",
+        ],
         correctAnswer: 2,
         explanation: "Joe Mullen became the first American-born player to reach 50 goals in 1988–89.",
       ),
       Question(
         question: "Which franchise became the Colorado Avalanche after leaving Quebec in 1995?",
-        answers: ["Hartford Whalers", "Minnesota North Stars", "Atlanta Thrashers", "Quebec Nordiques"],
+        answers: [
+          "Hartford Whalers",
+          "Minnesota North Stars",
+          "Atlanta Thrashers",
+          "Quebec Nordiques",
+        ],
         correctAnswer: 3,
         explanation: "The Quebec Nordiques relocated to Denver and became the Avalanche in 1995.",
       ),
@@ -535,19 +874,34 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Which NHL goalie was nicknamed The Eagle during his career in Chicago and Dallas?",
-        answers: ["Mike Vernon", "Ed Belfour", "Curtis Joseph", "Dominik Hašek"],
+        answers: [
+          "Mike Vernon",
+          "Ed Belfour",
+          "Curtis Joseph",
+          "Dominik Hašek",
+        ],
         correctAnswer: 1,
         explanation: "Ed Belfour was known as Eddie the Eagle.",
       ),
       Question(
         question: "Which Philadelphia Flyers player won the Hart Trophy in 1974, 1975, and 1976?",
-        answers: ["Bernie Parent", "Bill Barber", "Bobby Clarke", "Reggie Leach"],
+        answers: [
+          "Bernie Parent",
+          "Bill Barber",
+          "Bobby Clarke",
+          "Reggie Leach",
+        ],
         correctAnswer: 2,
         explanation: "Flyers captain Bobby Clarke was a three-time league MVP.",
       ),
       Question(
         question: "Which team completed the NHL's first undefeated playoff championship run in 1952?",
-        answers: ["Toronto Maple Leafs", "Montreal Canadiens", "Boston Bruins", "Detroit Red Wings"],
+        answers: [
+          "Toronto Maple Leafs",
+          "Montreal Canadiens",
+          "Boston Bruins",
+          "Detroit Red Wings",
+        ],
         correctAnswer: 3,
         explanation: "Detroit won all eight playoff games in 1952.",
       ),
@@ -559,19 +913,35 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Which NHL club drafted goaltender Martin Brodeur in 1990?",
-        answers: ["New York Islanders", "New Jersey Devils", "Montreal Canadiens", "Quebec Nordiques"],
+        answers: [
+          "New York Islanders",
+          "New Jersey Devils",
+          "Montreal Canadiens",
+          "Quebec Nordiques",
+        ],
         correctAnswer: 1,
-        explanation: "The Devils selected Brodeur in the first round of the 1990 draft.",
+        explanation:
+            "The Devils selected Brodeur in the first round of the 1990 draft.",
       ),
       Question(
         question: "Which team won the 1974 Stanley Cup to become the first expansion-era franchise to take the championship?",
-        answers: ["Pittsburgh Penguins", "Los Angeles Kings", "Philadelphia Flyers", "Buffalo Sabres"],
+        answers: [
+          "Pittsburgh Penguins",
+          "Los Angeles Kings",
+          "Philadelphia Flyers",
+          "Buffalo Sabres",
+        ],
         correctAnswer: 2,
         explanation: "Philadelphia became the first 1967 expansion team to win the Cup in 1974.",
       ),
       Question(
         question: "Which original-six team has gone without a Stanley Cup since 1967 through the 2024 season?",
-        answers: ["Montreal Canadiens", "New York Rangers", "Boston Bruins", "Toronto Maple Leafs"],
+        answers: [
+          "Montreal Canadiens",
+          "New York Rangers",
+          "Boston Bruins",
+          "Toronto Maple Leafs",
+        ],
         correctAnswer: 3,
         explanation: "Toronto last won the Stanley Cup in 1967.",
       ),
@@ -583,37 +953,69 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Which player was awarded the inaugural Rocket Richard Trophy in 1999?",
-        answers: ["Peter Bondra", "Teemu Selänne", "Pavel Bure", "Jaromír Jágr"],
+        answers: [
+          "Peter Bondra",
+          "Teemu Selänne",
+          "Pavel Bure",
+          "Jaromír Jágr",
+        ],
         correctAnswer: 1,
         explanation: "Teemu Selänne was the first recipient of the Maurice Richard Trophy in 1998–99.",
       ),
       Question(
         question: "Which club did Wayne Gretzky join following the 1988 trade from Edmonton?",
-        answers: ["New York Rangers", "Vancouver Canucks", "Los Angeles Kings", "St. Louis Blues"],
+        answers: [
+          "New York Rangers",
+          "Vancouver Canucks",
+          "Los Angeles Kings",
+          "St. Louis Blues",
+        ],
         correctAnswer: 2,
         explanation: "Gretzky was traded to the Kings in 1988.",
       ),
       Question(
         question: "Who scored the famous five-goals-five-ways game in 1988?",
-        answers: ["Wayne Gretzky", "Mark Messier", "Jaromír Jágr", "Mario Lemieux"],
+        answers: [
+          "Wayne Gretzky",
+          "Mark Messier",
+          "Jaromír Jágr",
+          "Mario Lemieux",
+        ],
         correctAnswer: 3,
         explanation: "Lemieux scored in five different manpower situations on December 31, 1988.",
       ),
       Question(
         question: "Who was the first goalie to score a goal by shooting the puck directly into the opponent's net in the NHL?",
-        answers: ["Ron Hextall", "Billy Smith", "Martin Brodeur", "Dominik Hašek"],
+        answers: [
+          "Ron Hextall",
+          "Billy Smith",
+          "Martin Brodeur",
+          "Dominik Hašek",
+        ],
         correctAnswer: 0,
-        explanation: "Ron Hextall scored by shooting into an empty net in 1987.",
+        explanation:
+            "Ron Hextall scored by shooting into an empty net in 1987.",
       ),
       Question(
         question: "Which NHL trio was known as Detroit's Production Line in the late 1940s?",
-        answers: ["Wayne Gretzky, Jari Kurri and Mark Messier", "Gordie Howe, Sid Abel and Ted Lindsay", "Maurice Richard, Elmer Lach and Toe Blake", "Bobby Hull, Stan Mikita and Pierre Pilote"],
+        answers: [
+          "Wayne Gretzky, Jari Kurri and Mark Messier",
+          "Gordie Howe, Sid Abel and Ted Lindsay",
+          "Maurice Richard, Elmer Lach and Toe Blake",
+          "Bobby Hull, Stan Mikita and Pierre Pilote",
+        ],
         correctAnswer: 1,
-        explanation: "The Production Line combined Howe, Abel and Lindsay for Detroit.",
+        explanation:
+            "The Production Line combined Howe, Abel and Lindsay for Detroit.",
       ),
       Question(
         question: "Which team won the 1996 Stanley Cup in its first season after relocating from Quebec?",
-        answers: ["New Jersey Devils", "Detroit Red Wings", "Colorado Avalanche", "Dallas Stars"],
+        answers: [
+          "New Jersey Devils",
+          "Detroit Red Wings",
+          "Colorado Avalanche",
+          "Dallas Stars",
+        ],
         correctAnswer: 2,
         explanation: "Colorado won the Stanley Cup in its inaugural season after relocation.",
       ),
@@ -635,7 +1037,12 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Who is widely credited with leading the revival of the modern Olympics in the late nineteenth century?",
-        answers: ["Juan Antonio Samaranch", "Pierre de Coubertin", "Jesse Owens", "Avery Brundage"],
+        answers: [
+          "Juan Antonio Samaranch",
+          "Pierre de Coubertin",
+          "Jesse Owens",
+          "Avery Brundage",
+        ],
         correctAnswer: 1,
         explanation: "French educator Pierre de Coubertin championed the modern Olympic revival.",
       ),
@@ -646,8 +1053,14 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
         explanation: "The 2004 Summer Games were held in Athens, Greece.",
       ),
       Question(
-        question: "Which athlete won seven Olympic gold medals in swimming in 1972?",
-        answers: ["Michael Phelps", "Ian Thorpe", "Johnny Weissmuller", "Mark Spitz"],
+        question:
+            "Which athlete won seven Olympic gold medals in swimming in 1972?",
+        answers: [
+          "Michael Phelps",
+          "Ian Thorpe",
+          "Johnny Weissmuller",
+          "Mark Spitz",
+        ],
         correctAnswer: 3,
         explanation: "Mark Spitz won seven gold medals at Munich 1972.",
       ),
@@ -655,7 +1068,8 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
         question: "Which country hosted the 2010 Winter Olympics?",
         answers: ["Canada", "Russia", "South Korea", "Japan"],
         correctAnswer: 0,
-        explanation: "Vancouver and Whistler in Canada hosted the 2010 Winter Games.",
+        explanation:
+            "Vancouver and Whistler in Canada hosted the 2010 Winter Games.",
       ),
       Question(
         question: "Which city hosted the 1992 Summer Olympics?",
@@ -665,9 +1079,15 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "What is the name of the opening ceremony event in which national teams enter the stadium?",
-        answers: ["Olympic Trials", "Victory March", "Parade of Nations", "Medal Parade"],
+        answers: [
+          "Olympic Trials",
+          "Victory March",
+          "Parade of Nations",
+          "Medal Parade",
+        ],
         correctAnswer: 2,
-        explanation: "The Parade of Nations is part of the Olympic opening ceremony.",
+        explanation:
+            "The Parade of Nations is part of the Olympic opening ceremony.",
       ),
       Question(
         question: "Which city hosted the 2018 Winter Olympics?",
@@ -691,7 +1111,12 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Who became the first gymnast to score a perfect 10 at the Olympic Games in 1976?",
-        answers: ["Nadia Comăneci", "Olga Korbut", "Mary Lou Retton", "Simone Biles"],
+        answers: [
+          "Nadia Comăneci",
+          "Olga Korbut",
+          "Mary Lou Retton",
+          "Simone Biles",
+        ],
         correctAnswer: 0,
         explanation: "Nadia Comăneci received the first Olympic gymnastics perfect 10 in Montreal.",
       ),
@@ -703,21 +1128,39 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Who won the women's marathon at its Olympic debut in 1984?",
-        answers: ["Rosa Mota", "Catherine Ndereba", "Joan Benoit", "Paula Radcliffe"],
+        answers: [
+          "Rosa Mota",
+          "Catherine Ndereba",
+          "Joan Benoit",
+          "Paula Radcliffe",
+        ],
         correctAnswer: 2,
         explanation: "Joan Benoit of the United States won the first women's Olympic marathon.",
       ),
       Question(
-        question: "Which swimmer won six gold medals at the 1988 Seoul Olympics?",
-        answers: ["Janet Evans", "Matt Biondi", "Michael Gross", "Kristin Otto"],
+        question:
+            "Which swimmer won six gold medals at the 1988 Seoul Olympics?",
+        answers: [
+          "Janet Evans",
+          "Matt Biondi",
+          "Michael Gross",
+          "Kristin Otto",
+        ],
         correctAnswer: 3,
-        explanation: "East Germany's Kristin Otto won six gold medals in Seoul.",
+        explanation:
+            "East Germany's Kristin Otto won six gold medals in Seoul.",
       ),
       Question(
         question: "Which country became the first African nation to host the Summer Olympics?",
-        answers: ["No African country has hosted them through 2024", "South Africa", "Kenya", "Egypt"],
+        answers: [
+          "No African country has hosted them through 2024",
+          "South Africa",
+          "Kenya",
+          "Egypt",
+        ],
         correctAnswer: 0,
-        explanation: "No African country had hosted the Summer Olympics through 2024.",
+        explanation:
+            "No African country had hosted the Summer Olympics through 2024.",
       ),
       Question(
         question: "Which Japanese city hosted the 1972 Winter Olympics?",
@@ -726,8 +1169,14 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
         explanation: "Sapporo hosted the 1972 Winter Games.",
       ),
       Question(
-        question: "Which athlete won the Olympic decathlon in both 1948 and 1952?",
-        answers: ["Jim Thorpe", "Ashton Eaton", "Bob Mathias", "Daley Thompson"],
+        question:
+            "Which athlete won the Olympic decathlon in both 1948 and 1952?",
+        answers: [
+          "Jim Thorpe",
+          "Ashton Eaton",
+          "Bob Mathias",
+          "Daley Thompson",
+        ],
         correctAnswer: 2,
         explanation: "Bob Mathias won the decathlon at London and Helsinki.",
       ),
@@ -739,7 +1188,12 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Which nation topped the gold-medal table at the 1980 Moscow Summer Olympics?",
-        answers: ["Soviet Union", "East Germany", "United States", "Great Britain"],
+        answers: [
+          "Soviet Union",
+          "East Germany",
+          "United States",
+          "Great Britain",
+        ],
         correctAnswer: 0,
         explanation: "The Soviet Union led the gold-medal count at the 1980 Moscow Games.",
       ),
@@ -751,7 +1205,12 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Who won all four biathlon events at the Salt Lake City Winter Olympics in 2002?",
-        answers: ["Eric Heiden", "Martin Fourcade", "Ole Einar Bjørndalen", "Bjørn Dæhlie"],
+        answers: [
+          "Eric Heiden",
+          "Martin Fourcade",
+          "Ole Einar Bjørndalen",
+          "Bjørn Dæhlie",
+        ],
         correctAnswer: 2,
         explanation: "Norway’s Ole Einar Bjørndalen swept the four men's biathlon titles in 2002.",
       ),
@@ -769,13 +1228,24 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Which athlete carried the Olympic flame to light the cauldron at Atlanta 1996?",
-        answers: ["Jesse Owens", "Muhammad Ali", "Carl Lewis", "Michael Jordan"],
+        answers: [
+          "Jesse Owens",
+          "Muhammad Ali",
+          "Carl Lewis",
+          "Michael Jordan",
+        ],
         correctAnswer: 1,
-        explanation: "Muhammad Ali famously lit the cauldron at the 1996 Atlanta Games.",
+        explanation:
+            "Muhammad Ali famously lit the cauldron at the 1996 Atlanta Games.",
       ),
       Question(
         question: "Who won the men's 100-meter gold medal at Tokyo 2020, held in 2021?",
-        answers: ["Fred Kerley", "Yohan Blake", "Marcell Jacobs", "Andre De Grasse"],
+        answers: [
+          "Fred Kerley",
+          "Yohan Blake",
+          "Marcell Jacobs",
+          "Andre De Grasse",
+        ],
         correctAnswer: 2,
         explanation: "Italy's Marcell Jacobs won the men's 100 meters.",
       ),
@@ -787,7 +1257,12 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Who won the women’s 800-meter freestyle at both the 2012 and 2016 Olympics?",
-        answers: ["Katie Ledecky", "Rebecca Adlington", "Mireia Belmonte", "Katinka Hosszú"],
+        answers: [
+          "Katie Ledecky",
+          "Rebecca Adlington",
+          "Mireia Belmonte",
+          "Katinka Hosszú",
+        ],
         correctAnswer: 0,
         explanation: "Katie Ledecky won the 800-meter freestyle in London 2012 and Rio 2016.",
       ),
@@ -807,7 +1282,12 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
     "Hard": [
       Question(
         question: "Which American won the first gold medal awarded at the 1896 modern Olympics?",
-        answers: ["Thomas Burke", "Robert Garrett", "Ellery Clark", "James Connolly"],
+        answers: [
+          "Thomas Burke",
+          "Robert Garrett",
+          "Ellery Clark",
+          "James Connolly",
+        ],
         correctAnswer: 3,
         explanation: "Connolly won the triple jump on April 6, 1896.",
       ),
@@ -815,11 +1295,17 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
         question: "Which city staged the equestrian events for the 1956 Summer Olympics, separate from Melbourne?",
         answers: ["Stockholm", "Helsinki", "Copenhagen", "Oslo"],
         correctAnswer: 0,
-        explanation: "Quarantine laws forced the equestrian events to Stockholm.",
+        explanation:
+            "Quarantine laws forced the equestrian events to Stockholm.",
       ),
       Question(
         question: "Which runner won the marathon at the 1896 Olympic Games?",
-        answers: ["Paavo Nurmi", "Spyridon Louis", "Abebe Bikila", "Dorando Pietri"],
+        answers: [
+          "Paavo Nurmi",
+          "Spyridon Louis",
+          "Abebe Bikila",
+          "Dorando Pietri",
+        ],
         correctAnswer: 1,
         explanation: "Greek runner Spyridon Louis won the inaugural modern Olympic marathon.",
       ),
@@ -827,19 +1313,27 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
         question: "Which athlete won nine Olympic gold medals in track events between 1920 and 1928?",
         answers: ["Carl Lewis", "Allyson Felix", "Paavo Nurmi", "Jesse Owens"],
         correctAnswer: 2,
-        explanation: "Paavo Nurmi won nine Olympic gold medals across three Games.",
+        explanation:
+            "Paavo Nurmi won nine Olympic gold medals across three Games.",
       ),
       Question(
         question: "Which sport did Charlotte Cooper win at the 1900 Olympics, becoming one of the first female Olympic champions?",
         answers: ["Golf", "Swimming", "Archery", "Tennis"],
         correctAnswer: 3,
-        explanation: "Charlotte Cooper won women's singles tennis in Paris in 1900.",
+        explanation:
+            "Charlotte Cooper won women's singles tennis in Paris in 1900.",
       ),
       Question(
         question: "Which athlete won the marathon running barefoot at the 1960 Rome Olympics?",
-        answers: ["Abebe Bikila", "Spyridon Louis", "Emil Zátopek", "Kip Keino"],
+        answers: [
+          "Abebe Bikila",
+          "Spyridon Louis",
+          "Emil Zátopek",
+          "Kip Keino",
+        ],
         correctAnswer: 0,
-        explanation: "Ethiopia's Abebe Bikila won the Rome marathon barefoot in 1960.",
+        explanation:
+            "Ethiopia's Abebe Bikila won the Rome marathon barefoot in 1960.",
       ),
       Question(
         question: "Which nation won the first Olympic women's football tournament in 1996?",
@@ -855,21 +1349,37 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
       ),
       Question(
         question: "Which swimmer won three individual gold medals in the women's freestyle events at Mexico City 1968?",
-        answers: ["Shane Gould", "Dawn Fraser", "Katie Ledecky", "Debbie Meyer"],
+        answers: [
+          "Shane Gould",
+          "Dawn Fraser",
+          "Katie Ledecky",
+          "Debbie Meyer",
+        ],
         correctAnswer: 3,
         explanation: "Debbie Meyer won the 200, 400 and 800-meter freestyle races at the 1968 Games.",
       ),
       Question(
         question: "At which Olympics did the Soviet Union make its first Summer Games appearance?",
-        answers: ["Helsinki 1952", "London 1948", "Melbourne 1956", "Rome 1960"],
+        answers: [
+          "Helsinki 1952",
+          "London 1948",
+          "Melbourne 1956",
+          "Rome 1960",
+        ],
         correctAnswer: 0,
         explanation: "The USSR first competed at the Summer Olympics in Helsinki in 1952.",
       ),
       Question(
         question: "Which athlete won both the 5,000m and 10,000m at the 1952 Olympics, and also took marathon gold?",
-        answers: ["Haile Gebrselassie", "Emil Zátopek", "Paavo Nurmi", "Lasse Virén"],
+        answers: [
+          "Haile Gebrselassie",
+          "Emil Zátopek",
+          "Paavo Nurmi",
+          "Lasse Virén",
+        ],
         correctAnswer: 1,
-        explanation: "Emil Zátopek won all three distance titles in Helsinki in 1952.",
+        explanation:
+            "Emil Zátopek won all three distance titles in Helsinki in 1952.",
       ),
       Question(
         question: "Which city hosted the second modern Olympic Games in 1900?",
@@ -887,17 +1397,28 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
         question: "What was the first year Olympic women's swimming events were held?",
         answers: ["1912", "1900", "1920", "1928"],
         correctAnswer: 0,
-        explanation: "Women first contested Olympic swimming events in Stockholm 1912.",
+        explanation:
+            "Women first contested Olympic swimming events in Stockholm 1912.",
       ),
       Question(
         question: "Who was the first athlete to win gold medals at both the Summer and Winter Olympics?",
-        answers: ["Christa Luding-Rothenburger", "Eddie Eagan", "Clara Hughes", "Lauryn Williams"],
+        answers: [
+          "Christa Luding-Rothenburger",
+          "Eddie Eagan",
+          "Clara Hughes",
+          "Lauryn Williams",
+        ],
         correctAnswer: 1,
         explanation: "Eddie Eagan won summer boxing gold in 1920 and winter bobsleigh gold in 1932.",
       ),
       Question(
         question: "Which athlete won Olympic medals in speed skating and track cycling in 1988, becoming the first to medal at both Summer and Winter Games in the same year?",
-        answers: ["Lauryn Williams", "Eddie Eagan", "Christa Luding-Rothenburger", "Clara Hughes"],
+        answers: [
+          "Lauryn Williams",
+          "Eddie Eagan",
+          "Christa Luding-Rothenburger",
+          "Clara Hughes",
+        ],
         correctAnswer: 2,
         explanation: "Christa Luding-Rothenburger won speed skating silver at Calgary and track cycling silver at Seoul in 1988.",
       ),
@@ -911,13 +1432,20 @@ final Map<String, Map<String, List<Question>>> sportsHistoryAdditions = {
         question: "Which nation won the most gold medals at the 1904 St. Louis Olympics?",
         answers: ["United States", "Germany", "Great Britain", "France"],
         correctAnswer: 0,
-        explanation: "U.S. athletes won by far the most gold medals at St. Louis.",
+        explanation:
+            "U.S. athletes won by far the most gold medals at St. Louis.",
       ),
       Question(
         question: "Who became the first woman to receive an individual Olympic gymnastics all-around gold for the United States?",
-        answers: ["Carly Patterson", "Mary Lou Retton", "Nadia Comăneci", "Shannon Miller"],
+        answers: [
+          "Carly Patterson",
+          "Mary Lou Retton",
+          "Nadia Comăneci",
+          "Shannon Miller",
+        ],
         correctAnswer: 1,
-        explanation: "Mary Lou Retton won the women's individual all-around in 1984.",
+        explanation:
+            "Mary Lou Retton won the women's individual all-around in 1984.",
       ),
       Question(
         question: "Which city hosted the first Olympic Winter Games outside Europe in 1932?",

@@ -18,9 +18,8 @@ migrate_working_dir/
 *.iws
 .idea/
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
+# VS Code
+# Keep .vscode available for project-level launch/tasks if intentionally committed.
 #.vscode/
 
 # Flutter/Dart/Pub related
@@ -39,10 +38,34 @@ app.*.symbols
 # Obfuscation related
 app.*.map.json
 
-# Android Studio will place build artifacts here
+# Android generated build artifacts
 /android/app/debug
 /android/app/profile
 /android/app/release
 
+# Local Android SDK configuration
+/android/local.properties
+
+# Signing credentials and private keys - NEVER commit
+/android/key.properties
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+*.cer
+*.mobileprovision
+
+# Environment/secrets files
+.env
+.env.*
+!.env.example
+
 # Widget Preview related
 .widget_preview/
+
+# Codemagic
+# codemagic.yaml SHOULD be committed if used. Store passwords, certificates,
+# provisioning profiles, and API keys in Codemagic environment variables/groups,
+# not in the repository.

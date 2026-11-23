@@ -2,74 +2,642 @@
 // Question-level review sources are in CHRISTMAS_CAROLS_AUDIT.csv.
 import '../models/question.dart';
 
-final Map<String, Map<String, Map<String, List<Question>>>> christmasCarolsQuestionBanks = {
+final Map<String, Map<String, Map<String, List<Question>>>>
+christmasCarolsQuestionBanks = {
   'Holidays': {
     'Christmas Carols': {
       'Easy': [
-        Question(question: "Which carol is named after a peaceful, quiet night?", answers: ["Joy to the World", "O Holy Night", "Silent Night", "The First Noel"], correctAnswer: 2, explanation: "The title Silent Night describes the quiet night of Jesus' birth."),
-        Question(question: "Which carol celebrates a king known for helping a poor person in winter?", answers: ["We Three Kings", "Good King Wenceslas", "The First Noel", "O Little Town of Bethlehem"], correctAnswer: 1, explanation: "Good King Wenceslas tells of a ruler showing generosity in winter."),
-        Question(question: "What carol takes its name from the town where Jesus was born?", answers: ["The Holly and the Ivy", "Angels from the Realms of Glory", "O Come, All Ye Faithful", "O Little Town of Bethlehem"], correctAnswer: 3, explanation: "Bethlehem is the birthplace of Jesus in the nativity account."),
-        Question(question: "Which carol has a title that invites people to rejoice throughout the world?", answers: ["Joy to the World", "In the Bleak Midwinter", "Silent Night", "The Coventry Carol"], correctAnswer: 0, explanation: "Joy to the World is a well-known Christmas hymn of universal rejoicing."),
-        Question(question: "Which Christmas hymn asks people to come and adore the newborn king?", answers: ["The First Noel", "Good King Wenceslas", "Deck the Halls", "O Come, All Ye Faithful"], correctAnswer: 3, explanation: "O Come, All Ye Faithful is an invitation to worship the infant Jesus."),
-        Question(question: "Which carol's title names three gifts-bearing kings?", answers: ["Once in Royal David's City", "Hark! The Herald Angels Sing", "The First Noel", "We Three Kings"], correctAnswer: 3, explanation: "We Three Kings is a traditional carol about the visitors who bring gifts."),
-        Question(question: "Which carol uses a traditional English melody called Greensleeves?", answers: ["O Holy Night", "Silent Night", "Away in a Manger", "What Child Is This?"], correctAnswer: 3, explanation: "What Child Is This? is commonly sung to the melody GREENSLEEVES."),
-        Question(question: "Which carol focuses on a manger in its title?", answers: ["O Come, O Come, Emmanuel", "Carol of the Bells", "Away in a Manger", "The First Noel"], correctAnswer: 2, explanation: "Away in a Manger is a carol about Jesus as an infant."),
-        Question(question: "Which carol's title describes a group of announcing angels?", answers: ["Good King Wenceslas", "Hark! The Herald Angels Sing", "O Christmas Tree", "I Saw Three Ships"], correctAnswer: 1, explanation: "Hark! The Herald Angels Sing announces the birth of Jesus through angels."),
-        Question(question: "Which carol's title refers to the first Christmas announcement?", answers: ["In the Bleak Midwinter", "O Christmas Tree", "Deck the Halls", "The First Noel"], correctAnswer: 3, explanation: "The First Noel is a traditional English-language Christmas carol."),
-        Question(question: "Which Christmas carol is also widely known by the Latin name Adeste Fideles?", answers: ["Silent Night", "Joy to the World", "O Come, All Ye Faithful", "O Little Town of Bethlehem"], correctAnswer: 2, explanation: "Adeste Fideles is the Latin title of O Come, All Ye Faithful."),
-        Question(question: "Which carol is associated with a bell-like repeating melody from Ukraine?", answers: ["O Holy Night", "The Holly and the Ivy", "Angels We Have Heard on High", "Carol of the Bells"], correctAnswer: 3, explanation: "Carol of the Bells is based on the Ukrainian Shchedryk melody."),
-        Question(question: "Which traditional carol names two plants often used as Christmas decorations?", answers: ["We Three Kings", "The Holly and the Ivy", "Good King Wenceslas", "O Come, O Come, Emmanuel"], correctAnswer: 1, explanation: "Holly and ivy are the two plants featured in the carol's title."),
-        Question(question: "Which familiar carol's title includes a decorated evergreen?", answers: ["O Christmas Tree", "The First Noel", "God Rest Ye Merry, Gentlemen", "Coventry Carol"], correctAnswer: 0, explanation: "O Christmas Tree is the English rendering of the German O Tannenbaum."),
-        Question(question: "Which carol is named for a series of holiday gifts across twelve days?", answers: ["We Three Kings", "The Twelve Days of Christmas", "The First Noel", "Silent Night"], correctAnswer: 1, explanation: "The Twelve Days of Christmas describes gifts given across twelve days."),
-        Question(question: "Which traditional carol is a lullaby associated with a Coventry mystery play?", answers: ["Coventry Carol", "The First Noel", "Joy to the World", "Good King Wenceslas"], correctAnswer: 0, explanation: "Coventry Carol originated in an English mystery play."),
-        Question(question: "Which Christmas hymn calls for the coming of Emmanuel?", answers: ["The Twelve Days of Christmas", "O Come, O Come, Emmanuel", "We Three Kings", "Deck the Halls"], correctAnswer: 1, explanation: "O Come, O Come, Emmanuel is a traditional Advent hymn."),
-        Question(question: "Which carol has the title of a cold winter landscape?", answers: ["Silent Night", "The First Noel", "In the Bleak Midwinter", "Joy to the World"], correctAnswer: 2, explanation: "In the Bleak Midwinter is a Christmas poem set to music."),
-        Question(question: "Which traditional carol is named for singing about angels heard from above?", answers: ["O Christmas Tree", "Once in Royal David's City", "The Holly and the Ivy", "Angels We Have Heard on High"], correctAnswer: 3, explanation: "Angels We Have Heard on High is a Christmas carol about the angelic announcement."),
-        Question(question: "Which carol's title directly calls people to decorate for Christmas?", answers: ["Silent Night", "Deck the Halls", "The First Noel", "Good King Wenceslas"], correctAnswer: 1, explanation: "Deck the Halls is a traditional festive song about decorating."),
+        Question(
+          question: "Which carol is named after a peaceful, quiet night?",
+          answers: [
+            "Joy to the World",
+            "O Holy Night",
+            "Silent Night",
+            "The First Noel",
+          ],
+          correctAnswer: 2,
+          explanation: "The title Silent Night describes the quiet night of Jesus' birth.",
+        ),
+        Question(
+          question: "Which carol celebrates a king known for helping a poor person in winter?",
+          answers: [
+            "We Three Kings",
+            "Good King Wenceslas",
+            "The First Noel",
+            "O Little Town of Bethlehem",
+          ],
+          correctAnswer: 1,
+          explanation: "Good King Wenceslas tells of a ruler showing generosity in winter.",
+        ),
+        Question(
+          question:
+              "What carol takes its name from the town where Jesus was born?",
+          answers: [
+            "The Holly and the Ivy",
+            "Angels from the Realms of Glory",
+            "O Come, All Ye Faithful",
+            "O Little Town of Bethlehem",
+          ],
+          correctAnswer: 3,
+          explanation:
+              "Bethlehem is the birthplace of Jesus in the nativity account.",
+        ),
+        Question(
+          question: "Which carol has a title that invites people to rejoice throughout the world?",
+          answers: [
+            "Joy to the World",
+            "In the Bleak Midwinter",
+            "Silent Night",
+            "The Coventry Carol",
+          ],
+          correctAnswer: 0,
+          explanation: "Joy to the World is a well-known Christmas hymn of universal rejoicing.",
+        ),
+        Question(
+          question: "Which Christmas hymn asks people to come and adore the newborn king?",
+          answers: [
+            "The First Noel",
+            "Good King Wenceslas",
+            "Deck the Halls",
+            "O Come, All Ye Faithful",
+          ],
+          correctAnswer: 3,
+          explanation: "O Come, All Ye Faithful is an invitation to worship the infant Jesus.",
+        ),
+        Question(
+          question: "Which carol's title names three gifts-bearing kings?",
+          answers: [
+            "Once in Royal David's City",
+            "Hark! The Herald Angels Sing",
+            "The First Noel",
+            "We Three Kings",
+          ],
+          correctAnswer: 3,
+          explanation: "We Three Kings is a traditional carol about the visitors who bring gifts.",
+        ),
+        Question(
+          question: "Which carol uses a traditional English melody called Greensleeves?",
+          answers: [
+            "O Holy Night",
+            "Silent Night",
+            "Away in a Manger",
+            "What Child Is This?",
+          ],
+          correctAnswer: 3,
+          explanation: "What Child Is This? is commonly sung to the melody GREENSLEEVES.",
+        ),
+        Question(
+          question: "Which carol focuses on a manger in its title?",
+          answers: [
+            "O Come, O Come, Emmanuel",
+            "Carol of the Bells",
+            "Away in a Manger",
+            "The First Noel",
+          ],
+          correctAnswer: 2,
+          explanation: "Away in a Manger is a carol about Jesus as an infant.",
+        ),
+        Question(
+          question:
+              "Which carol's title describes a group of announcing angels?",
+          answers: [
+            "Good King Wenceslas",
+            "Hark! The Herald Angels Sing",
+            "O Christmas Tree",
+            "I Saw Three Ships",
+          ],
+          correctAnswer: 1,
+          explanation: "Hark! The Herald Angels Sing announces the birth of Jesus through angels.",
+        ),
+        Question(
+          question:
+              "Which carol's title refers to the first Christmas announcement?",
+          answers: [
+            "In the Bleak Midwinter",
+            "O Christmas Tree",
+            "Deck the Halls",
+            "The First Noel",
+          ],
+          correctAnswer: 3,
+          explanation: "The First Noel is a traditional English-language Christmas carol.",
+        ),
+        Question(
+          question: "Which Christmas carol is also widely known by the Latin name Adeste Fideles?",
+          answers: [
+            "Silent Night",
+            "Joy to the World",
+            "O Come, All Ye Faithful",
+            "O Little Town of Bethlehem",
+          ],
+          correctAnswer: 2,
+          explanation:
+              "Adeste Fideles is the Latin title of O Come, All Ye Faithful.",
+        ),
+        Question(
+          question: "Which carol is associated with a bell-like repeating melody from Ukraine?",
+          answers: [
+            "O Holy Night",
+            "The Holly and the Ivy",
+            "Angels We Have Heard on High",
+            "Carol of the Bells",
+          ],
+          correctAnswer: 3,
+          explanation:
+              "Carol of the Bells is based on the Ukrainian Shchedryk melody.",
+        ),
+        Question(
+          question: "Which traditional carol names two plants often used as Christmas decorations?",
+          answers: [
+            "We Three Kings",
+            "The Holly and the Ivy",
+            "Good King Wenceslas",
+            "O Come, O Come, Emmanuel",
+          ],
+          correctAnswer: 1,
+          explanation:
+              "Holly and ivy are the two plants featured in the carol's title.",
+        ),
+        Question(
+          question:
+              "Which familiar carol's title includes a decorated evergreen?",
+          answers: [
+            "O Christmas Tree",
+            "The First Noel",
+            "God Rest Ye Merry, Gentlemen",
+            "Coventry Carol",
+          ],
+          correctAnswer: 0,
+          explanation: "O Christmas Tree is the English rendering of the German O Tannenbaum.",
+        ),
+        Question(
+          question: "Which carol is named for a series of holiday gifts across twelve days?",
+          answers: [
+            "We Three Kings",
+            "The Twelve Days of Christmas",
+            "The First Noel",
+            "Silent Night",
+          ],
+          correctAnswer: 1,
+          explanation: "The Twelve Days of Christmas describes gifts given across twelve days.",
+        ),
+        Question(
+          question: "Which traditional carol is a lullaby associated with a Coventry mystery play?",
+          answers: [
+            "Coventry Carol",
+            "The First Noel",
+            "Joy to the World",
+            "Good King Wenceslas",
+          ],
+          correctAnswer: 0,
+          explanation: "Coventry Carol originated in an English mystery play.",
+        ),
+        Question(
+          question: "Which Christmas hymn calls for the coming of Emmanuel?",
+          answers: [
+            "The Twelve Days of Christmas",
+            "O Come, O Come, Emmanuel",
+            "We Three Kings",
+            "Deck the Halls",
+          ],
+          correctAnswer: 1,
+          explanation: "O Come, O Come, Emmanuel is a traditional Advent hymn.",
+        ),
+        Question(
+          question: "Which carol has the title of a cold winter landscape?",
+          answers: [
+            "Silent Night",
+            "The First Noel",
+            "In the Bleak Midwinter",
+            "Joy to the World",
+          ],
+          correctAnswer: 2,
+          explanation:
+              "In the Bleak Midwinter is a Christmas poem set to music.",
+        ),
+        Question(
+          question: "Which traditional carol is named for singing about angels heard from above?",
+          answers: [
+            "O Christmas Tree",
+            "Once in Royal David's City",
+            "The Holly and the Ivy",
+            "Angels We Have Heard on High",
+          ],
+          correctAnswer: 3,
+          explanation: "Angels We Have Heard on High is a Christmas carol about the angelic announcement.",
+        ),
+        Question(
+          question: "Which carol's title directly calls people to decorate for Christmas?",
+          answers: [
+            "Silent Night",
+            "Deck the Halls",
+            "The First Noel",
+            "Good King Wenceslas",
+          ],
+          correctAnswer: 1,
+          explanation:
+              "Deck the Halls is a traditional festive song about decorating.",
+        ),
       ],
       'Medium': [
-        Question(question: "Who wrote the words of Silent Night?", answers: ["Phillips Brooks", "Charles Wesley", "Joseph Mohr", "Isaac Watts"], correctAnswer: 2, explanation: "The Austrian priest Joseph Mohr wrote the text, first in 1816."),
-        Question(question: "Who composed the melody of Silent Night?", answers: ["Adolphe Adam", "Felix Mendelssohn", "Franz Xaver Gruber", "Gustav Holst"], correctAnswer: 2, explanation: "Franz Xaver Gruber set Mohr's words to music in 1818."),
-        Question(question: "In which country was Silent Night first performed?", answers: ["Austria", "Poland", "Germany", "Switzerland"], correctAnswer: 0, explanation: "Silent Night was first sung in Oberndorf, Austria."),
-        Question(question: "What year did Silent Night receive its original melody and first performance?", answers: ["1847", "1902", "1818", "1776"], correctAnswer: 2, explanation: "Gruber composed and performed Silent Night in 1818."),
-        Question(question: "Which instrument accompanied the first performance of Silent Night?", answers: ["Guitar", "Harpsichord", "Trumpet", "Bagpipes"], correctAnswer: 0, explanation: "The 1818 performance featured guitar accompaniment."),
-        Question(question: "Which hymn writer wrote Hark! The Herald Angels Sing?", answers: ["Charles Wesley", "John Newton", "Isaac Watts", "Cecil Frances Alexander"], correctAnswer: 0, explanation: "Charles Wesley wrote the original text for Hark! The Herald Angels Sing."),
-        Question(question: "Which composer wrote the melody commonly used for Hark! The Herald Angels Sing?", answers: ["Franz Gruber", "George Frideric Handel", "Felix Mendelssohn", "Gustav Holst"], correctAnswer: 2, explanation: "The familiar tune comes from music by Felix Mendelssohn."),
-        Question(question: "Who wrote the Christmas hymn Joy to the World?", answers: ["Phillips Brooks", "Charles Wesley", "John Mason Neale", "Isaac Watts"], correctAnswer: 3, explanation: "Joy to the World is based on words written by Isaac Watts."),
-        Question(question: "What is the original language of O Come, All Ye Faithful?", answers: ["German", "Latin", "French", "Greek"], correctAnswer: 1, explanation: "The carol circulated as Adeste Fideles, a Latin hymn."),
-        Question(question: "Who is widely credited with writing Adeste Fideles (O Come, All Ye Faithful)?", answers: ["William Chatterton Dix", "Joseph Mohr", "Henry Wadsworth Longfellow", "John Francis Wade"], correctAnswer: 3, explanation: "John Francis Wade is commonly credited with the Latin text."),
-        Question(question: "Which English poet wrote the text of What Child Is This?", answers: ["John Mason Neale", "William Chatterton Dix", "Christina Rossetti", "Edmund Sears"], correctAnswer: 1, explanation: "Dix wrote What Child Is This?; it uses the Greensleeves tune."),
-        Question(question: "What is the name of the tune used for What Child Is This?", answers: ["Stille Nacht", "Adeste Fideles", "Cranham", "Greensleeves"], correctAnswer: 3, explanation: "The traditional English melody Greensleeves is used for the hymn."),
-        Question(question: "Which poet wrote In the Bleak Midwinter?", answers: ["Emily Dickinson", "Christina Rossetti", "Elizabeth Barrett Browning", "Frances Ridley Havergal"], correctAnswer: 1, explanation: "Christina Rossetti authored the poem later set as a carol."),
-        Question(question: "Who wrote the words of Good King Wenceslas?", answers: ["Charles Wesley", "Phillips Brooks", "John Mason Neale", "Isaac Watts"], correctAnswer: 2, explanation: "John Mason Neale published Good King Wenceslas in 1853."),
-        Question(question: "Which American minister wrote O Little Town of Bethlehem?", answers: ["Phillips Brooks", "Edmund Sears", "Joseph Mohr", "John Henry Hopkins Jr."], correctAnswer: 0, explanation: "Phillips Brooks wrote the words of O Little Town of Bethlehem."),
-        Question(question: "Which American clergyman wrote both words and music for We Three Kings?", answers: ["John Francis Wade", "John Henry Hopkins Jr.", "Charles Wesley", "Henry Baker"], correctAnswer: 1, explanation: "John Henry Hopkins Jr. created We Three Kings in the 1850s."),
-        Question(question: "Who wrote the text of It Came Upon the Midnight Clear?", answers: ["Edmund Hamilton Sears", "John Mason Neale", "Phillips Brooks", "Isaac Watts"], correctAnswer: 0, explanation: "Edmund Sears wrote the text of It Came Upon the Midnight Clear."),
-        Question(question: "Which country was the traditional song Deck the Halls originally associated with?", answers: ["Italy", "Austria", "Wales", "Sweden"], correctAnswer: 2, explanation: "Deck the Halls uses the melody of a traditional Welsh song."),
-        Question(question: "Which country supplied the folk melody that became Carol of the Bells?", answers: ["Ukraine", "Austria", "Spain", "France"], correctAnswer: 0, explanation: "Carol of the Bells is an adaptation of the Ukrainian melody Shchedryk."),
-        Question(question: "What is the original title of the tune adapted into Carol of the Bells?", answers: ["Cranham", "Greensleeves", "Shchedryk", "Stille Nacht"], correctAnswer: 2, explanation: "Mykola Leontovych's Shchedryk later became known internationally as Carol of the Bells."),
+        Question(
+          question: "Who wrote the words of Silent Night?",
+          answers: [
+            "Phillips Brooks",
+            "Charles Wesley",
+            "Joseph Mohr",
+            "Isaac Watts",
+          ],
+          correctAnswer: 2,
+          explanation:
+              "The Austrian priest Joseph Mohr wrote the text, first in 1816.",
+        ),
+        Question(
+          question: "Who composed the melody of Silent Night?",
+          answers: [
+            "Adolphe Adam",
+            "Felix Mendelssohn",
+            "Franz Xaver Gruber",
+            "Gustav Holst",
+          ],
+          correctAnswer: 2,
+          explanation: "Franz Xaver Gruber set Mohr's words to music in 1818.",
+        ),
+        Question(
+          question: "In which country was Silent Night first performed?",
+          answers: ["Austria", "Poland", "Germany", "Switzerland"],
+          correctAnswer: 0,
+          explanation: "Silent Night was first sung in Oberndorf, Austria.",
+        ),
+        Question(
+          question: "What year did Silent Night receive its original melody and first performance?",
+          answers: ["1847", "1902", "1818", "1776"],
+          correctAnswer: 2,
+          explanation: "Gruber composed and performed Silent Night in 1818.",
+        ),
+        Question(
+          question: "Which instrument accompanied the first performance of Silent Night?",
+          answers: ["Guitar", "Harpsichord", "Trumpet", "Bagpipes"],
+          correctAnswer: 0,
+          explanation: "The 1818 performance featured guitar accompaniment.",
+        ),
+        Question(
+          question: "Which hymn writer wrote Hark! The Herald Angels Sing?",
+          answers: [
+            "Charles Wesley",
+            "John Newton",
+            "Isaac Watts",
+            "Cecil Frances Alexander",
+          ],
+          correctAnswer: 0,
+          explanation: "Charles Wesley wrote the original text for Hark! The Herald Angels Sing.",
+        ),
+        Question(
+          question: "Which composer wrote the melody commonly used for Hark! The Herald Angels Sing?",
+          answers: [
+            "Franz Gruber",
+            "George Frideric Handel",
+            "Felix Mendelssohn",
+            "Gustav Holst",
+          ],
+          correctAnswer: 2,
+          explanation:
+              "The familiar tune comes from music by Felix Mendelssohn.",
+        ),
+        Question(
+          question: "Who wrote the Christmas hymn Joy to the World?",
+          answers: [
+            "Phillips Brooks",
+            "Charles Wesley",
+            "John Mason Neale",
+            "Isaac Watts",
+          ],
+          correctAnswer: 3,
+          explanation:
+              "Joy to the World is based on words written by Isaac Watts.",
+        ),
+        Question(
+          question: "What is the original language of O Come, All Ye Faithful?",
+          answers: ["German", "Latin", "French", "Greek"],
+          correctAnswer: 1,
+          explanation: "The carol circulated as Adeste Fideles, a Latin hymn.",
+        ),
+        Question(
+          question: "Who is widely credited with writing Adeste Fideles (O Come, All Ye Faithful)?",
+          answers: [
+            "William Chatterton Dix",
+            "Joseph Mohr",
+            "Henry Wadsworth Longfellow",
+            "John Francis Wade",
+          ],
+          correctAnswer: 3,
+          explanation:
+              "John Francis Wade is commonly credited with the Latin text.",
+        ),
+        Question(
+          question: "Which English poet wrote the text of What Child Is This?",
+          answers: [
+            "John Mason Neale",
+            "William Chatterton Dix",
+            "Christina Rossetti",
+            "Edmund Sears",
+          ],
+          correctAnswer: 1,
+          explanation:
+              "Dix wrote What Child Is This?; it uses the Greensleeves tune.",
+        ),
+        Question(
+          question: "What is the name of the tune used for What Child Is This?",
+          answers: [
+            "Stille Nacht",
+            "Adeste Fideles",
+            "Cranham",
+            "Greensleeves",
+          ],
+          correctAnswer: 3,
+          explanation: "The traditional English melody Greensleeves is used for the hymn.",
+        ),
+        Question(
+          question: "Which poet wrote In the Bleak Midwinter?",
+          answers: [
+            "Emily Dickinson",
+            "Christina Rossetti",
+            "Elizabeth Barrett Browning",
+            "Frances Ridley Havergal",
+          ],
+          correctAnswer: 1,
+          explanation:
+              "Christina Rossetti authored the poem later set as a carol.",
+        ),
+        Question(
+          question: "Who wrote the words of Good King Wenceslas?",
+          answers: [
+            "Charles Wesley",
+            "Phillips Brooks",
+            "John Mason Neale",
+            "Isaac Watts",
+          ],
+          correctAnswer: 2,
+          explanation:
+              "John Mason Neale published Good King Wenceslas in 1853.",
+        ),
+        Question(
+          question: "Which American minister wrote O Little Town of Bethlehem?",
+          answers: [
+            "Phillips Brooks",
+            "Edmund Sears",
+            "Joseph Mohr",
+            "John Henry Hopkins Jr.",
+          ],
+          correctAnswer: 0,
+          explanation:
+              "Phillips Brooks wrote the words of O Little Town of Bethlehem.",
+        ),
+        Question(
+          question: "Which American clergyman wrote both words and music for We Three Kings?",
+          answers: [
+            "John Francis Wade",
+            "John Henry Hopkins Jr.",
+            "Charles Wesley",
+            "Henry Baker",
+          ],
+          correctAnswer: 1,
+          explanation:
+              "John Henry Hopkins Jr. created We Three Kings in the 1850s.",
+        ),
+        Question(
+          question: "Who wrote the text of It Came Upon the Midnight Clear?",
+          answers: [
+            "Edmund Hamilton Sears",
+            "John Mason Neale",
+            "Phillips Brooks",
+            "Isaac Watts",
+          ],
+          correctAnswer: 0,
+          explanation:
+              "Edmund Sears wrote the text of It Came Upon the Midnight Clear.",
+        ),
+        Question(
+          question: "Which country was the traditional song Deck the Halls originally associated with?",
+          answers: ["Italy", "Austria", "Wales", "Sweden"],
+          correctAnswer: 2,
+          explanation:
+              "Deck the Halls uses the melody of a traditional Welsh song.",
+        ),
+        Question(
+          question: "Which country supplied the folk melody that became Carol of the Bells?",
+          answers: ["Ukraine", "Austria", "Spain", "France"],
+          correctAnswer: 0,
+          explanation: "Carol of the Bells is an adaptation of the Ukrainian melody Shchedryk.",
+        ),
+        Question(
+          question: "What is the original title of the tune adapted into Carol of the Bells?",
+          answers: ["Cranham", "Greensleeves", "Shchedryk", "Stille Nacht"],
+          correctAnswer: 2,
+          explanation: "Mykola Leontovych's Shchedryk later became known internationally as Carol of the Bells.",
+        ),
       ],
       'Hard': [
-        Question(question: "Who organized the 1880 Nine Lessons and Carols service in Truro?", answers: ["John Mason Neale", "Eric Milner-White", "Edward White Benson", "Frederick Oakeley"], correctAnswer: 2, explanation: "Bishop Edward White Benson introduced the format in Truro in 1880."),
-        Question(question: "Which English cathedral city hosted the original 1880 Nine Lessons and Carols service?", answers: ["Truro", "Ely", "York", "Canterbury"], correctAnswer: 0, explanation: "The service originated in Truro, Cornwall."),
-        Question(question: "What year did King's College, Cambridge first hold its Festival of Nine Lessons and Carols?", answers: ["1939", "1880", "1918", "1905"], correctAnswer: 2, explanation: "King's College first held the service on Christmas Eve 1918."),
-        Question(question: "Who planned the first 1918 Nine Lessons and Carols service at King's College, Cambridge?", answers: ["Eric Milner-White", "Edward White Benson", "Charles Wesley", "David Willcocks"], correctAnswer: 0, explanation: "Dean Eric Milner-White planned the 1918 service at King's."),
-        Question(question: "What year was Good King Wenceslas published by John Mason Neale?", answers: ["1818", "1853", "1739", "1904"], correctAnswer: 1, explanation: "Neale published Good King Wenceslas in 1853."),
-        Question(question: "The melody used for Good King Wenceslas originally appeared in which historical song collection?", answers: ["The Sacred Harp", "Hymns Ancient and Modern", "Piae Cantiones", "The English Hymnal"], correctAnswer: 2, explanation: "The melody derives from the 1582 collection Piae Cantiones."),
-        Question(question: "The historical figure behind Good King Wenceslas ruled which region?", answers: ["Bavaria", "Saxony", "Bohemia", "Normandy"], correctAnswer: 2, explanation: "Wenceslaus I was a duke of Bohemia, not a reigning king in his lifetime."),
-        Question(question: "On which feast day is Good King Wenceslas set?", answers: ["Advent Sunday", "Candlemas", "Epiphany", "St. Stephen's Day"], correctAnswer: 3, explanation: "The carol's story takes place on the feast of Stephen, December 26."),
-        Question(question: "Which English medieval drama contained the Coventry Carol?", answers: ["The Second Shepherds' Play", "The Pageant of the Shearmen and Tailors", "The Castle of Perseverance", "Everyman"], correctAnswer: 1, explanation: "The Coventry Carol appeared in Coventry's Shearmen and Tailors pageant."),
-        Question(question: "Which biblical episode is lamented in the Coventry Carol?", answers: ["The visit to the temple", "The massacre of the innocents", "The wedding at Cana", "The flight into Egypt"], correctAnswer: 1, explanation: "The carol is a lullaby linked to Herod's killing of children in Matthew 2."),
-        Question(question: "Which composer created the tune CRANHAM commonly used for In the Bleak Midwinter?", answers: ["Felix Mendelssohn", "Harold Darke", "Gustav Holst", "Ralph Vaughan Williams"], correctAnswer: 2, explanation: "Holst wrote the setting commonly identified as CRANHAM."),
-        Question(question: "Which British composer wrote another frequently performed setting of In the Bleak Midwinter, distinct from Holst's?", answers: ["Harold Darke", "John Stainer", "Edward Elgar", "William Byrd"], correctAnswer: 0, explanation: "Harold Darke made a separate choral setting of Rossetti's text."),
-        Question(question: "Which sequence of ancient Advent prayers inspired O Come, O Come, Emmanuel?", answers: ["The Stations of the Cross", "The O Antiphons", "The Beatitudes", "The Great Litany"], correctAnswer: 1, explanation: "The carol draws on the series of O Antiphons traditionally used in Advent."),
-        Question(question: "Which nineteenth-century English translator is associated with O Come, O Come, Emmanuel?", answers: ["Cecil Frances Alexander", "Phillips Brooks", "William Chatterton Dix", "John Mason Neale"], correctAnswer: 3, explanation: "John Mason Neale made an influential English rendering of the Latin hymn."),
-        Question(question: "Which earlier tune by Mendelssohn was adapted for Hark! The Herald Angels Sing?", answers: ["A movement from Elijah", "His Wedding March", "A tune from his Gutenberg celebration cantata", "A movement from his Italian Symphony"], correctAnswer: 2, explanation: "The familiar tune comes from a Mendelssohn cantata celebrating printing."),
-        Question(question: "Which evangelist revised Charles Wesley's early wording of Hark! The Herald Angels Sing?", answers: ["John Newton", "Billy Sunday", "William Booth", "George Whitefield"], correctAnswer: 3, explanation: "George Whitefield helped shape the carol's familiar opening wording."),
-        Question(question: "In which year did the text of Silent Night originate, two years before its melody?", answers: ["1847", "1816", "1789", "1832"], correctAnswer: 1, explanation: "Joseph Mohr wrote the original poem in 1816."),
-        Question(question: "Which Christmas Eve event in 1914 is especially associated with soldiers singing Silent Night?", answers: ["The Paris Peace Conference", "The World War I Christmas Truce", "The armistice signing", "The Somme offensive"], correctAnswer: 1, explanation: "Accounts of the 1914 Christmas truce include soldiers singing carols such as Silent Night."),
-        Question(question: "Who arranged the Ukrainian song Shchedryk that underlies Carol of the Bells?", answers: ["Mykola Leontovych", "Adolphe Adam", "Franz Gruber", "Peter Wilhousky"], correctAnswer: 0, explanation: "Mykola Leontovych created the famous choral arrangement of Shchedryk."),
-        Question(question: "Who wrote the well-known English Christmas lyrics for Carol of the Bells in the 1930s?", answers: ["John Mason Neale", "Peter J. Wilhousky", "Charles Wesley", "Phillips Brooks"], correctAnswer: 1, explanation: "Peter J. Wilhousky adapted the Ukrainian melody with English words."),
+        Question(
+          question: "Who organized the 1880 Nine Lessons and Carols service in Truro?",
+          answers: [
+            "John Mason Neale",
+            "Eric Milner-White",
+            "Edward White Benson",
+            "Frederick Oakeley",
+          ],
+          correctAnswer: 2,
+          explanation: "Bishop Edward White Benson introduced the format in Truro in 1880.",
+        ),
+        Question(
+          question: "Which English cathedral city hosted the original 1880 Nine Lessons and Carols service?",
+          answers: ["Truro", "Ely", "York", "Canterbury"],
+          correctAnswer: 0,
+          explanation: "The service originated in Truro, Cornwall.",
+        ),
+        Question(
+          question: "What year did King's College, Cambridge first hold its Festival of Nine Lessons and Carols?",
+          answers: ["1939", "1880", "1918", "1905"],
+          correctAnswer: 2,
+          explanation:
+              "King's College first held the service on Christmas Eve 1918.",
+        ),
+        Question(
+          question: "Who planned the first 1918 Nine Lessons and Carols service at King's College, Cambridge?",
+          answers: [
+            "Eric Milner-White",
+            "Edward White Benson",
+            "Charles Wesley",
+            "David Willcocks",
+          ],
+          correctAnswer: 0,
+          explanation:
+              "Dean Eric Milner-White planned the 1918 service at King's.",
+        ),
+        Question(
+          question: "What year was Good King Wenceslas published by John Mason Neale?",
+          answers: ["1818", "1853", "1739", "1904"],
+          correctAnswer: 1,
+          explanation: "Neale published Good King Wenceslas in 1853.",
+        ),
+        Question(
+          question: "The melody used for Good King Wenceslas originally appeared in which historical song collection?",
+          answers: [
+            "The Sacred Harp",
+            "Hymns Ancient and Modern",
+            "Piae Cantiones",
+            "The English Hymnal",
+          ],
+          correctAnswer: 2,
+          explanation:
+              "The melody derives from the 1582 collection Piae Cantiones.",
+        ),
+        Question(
+          question: "The historical figure behind Good King Wenceslas ruled which region?",
+          answers: ["Bavaria", "Saxony", "Bohemia", "Normandy"],
+          correctAnswer: 2,
+          explanation: "Wenceslaus I was a duke of Bohemia, not a reigning king in his lifetime.",
+        ),
+        Question(
+          question: "On which feast day is Good King Wenceslas set?",
+          answers: [
+            "Advent Sunday",
+            "Candlemas",
+            "Epiphany",
+            "St. Stephen's Day",
+          ],
+          correctAnswer: 3,
+          explanation: "The carol's story takes place on the feast of Stephen, December 26.",
+        ),
+        Question(
+          question:
+              "Which English medieval drama contained the Coventry Carol?",
+          answers: [
+            "The Second Shepherds' Play",
+            "The Pageant of the Shearmen and Tailors",
+            "The Castle of Perseverance",
+            "Everyman",
+          ],
+          correctAnswer: 1,
+          explanation: "The Coventry Carol appeared in Coventry's Shearmen and Tailors pageant.",
+        ),
+        Question(
+          question: "Which biblical episode is lamented in the Coventry Carol?",
+          answers: [
+            "The visit to the temple",
+            "The massacre of the innocents",
+            "The wedding at Cana",
+            "The flight into Egypt",
+          ],
+          correctAnswer: 1,
+          explanation: "The carol is a lullaby linked to Herod's killing of children in Matthew 2.",
+        ),
+        Question(
+          question: "Which composer created the tune CRANHAM commonly used for In the Bleak Midwinter?",
+          answers: [
+            "Felix Mendelssohn",
+            "Harold Darke",
+            "Gustav Holst",
+            "Ralph Vaughan Williams",
+          ],
+          correctAnswer: 2,
+          explanation:
+              "Holst wrote the setting commonly identified as CRANHAM.",
+        ),
+        Question(
+          question: "Which British composer wrote another frequently performed setting of In the Bleak Midwinter, distinct from Holst's?",
+          answers: [
+            "Harold Darke",
+            "John Stainer",
+            "Edward Elgar",
+            "William Byrd",
+          ],
+          correctAnswer: 0,
+          explanation:
+              "Harold Darke made a separate choral setting of Rossetti's text.",
+        ),
+        Question(
+          question: "Which sequence of ancient Advent prayers inspired O Come, O Come, Emmanuel?",
+          answers: [
+            "The Stations of the Cross",
+            "The O Antiphons",
+            "The Beatitudes",
+            "The Great Litany",
+          ],
+          correctAnswer: 1,
+          explanation: "The carol draws on the series of O Antiphons traditionally used in Advent.",
+        ),
+        Question(
+          question: "Which nineteenth-century English translator is associated with O Come, O Come, Emmanuel?",
+          answers: [
+            "Cecil Frances Alexander",
+            "Phillips Brooks",
+            "William Chatterton Dix",
+            "John Mason Neale",
+          ],
+          correctAnswer: 3,
+          explanation: "John Mason Neale made an influential English rendering of the Latin hymn.",
+        ),
+        Question(
+          question: "Which earlier tune by Mendelssohn was adapted for Hark! The Herald Angels Sing?",
+          answers: [
+            "A movement from Elijah",
+            "His Wedding March",
+            "A tune from his Gutenberg celebration cantata",
+            "A movement from his Italian Symphony",
+          ],
+          correctAnswer: 2,
+          explanation: "The familiar tune comes from a Mendelssohn cantata celebrating printing.",
+        ),
+        Question(
+          question: "Which evangelist revised Charles Wesley's early wording of Hark! The Herald Angels Sing?",
+          answers: [
+            "John Newton",
+            "Billy Sunday",
+            "William Booth",
+            "George Whitefield",
+          ],
+          correctAnswer: 3,
+          explanation: "George Whitefield helped shape the carol's familiar opening wording.",
+        ),
+        Question(
+          question: "In which year did the text of Silent Night originate, two years before its melody?",
+          answers: ["1847", "1816", "1789", "1832"],
+          correctAnswer: 1,
+          explanation: "Joseph Mohr wrote the original poem in 1816.",
+        ),
+        Question(
+          question: "Which Christmas Eve event in 1914 is especially associated with soldiers singing Silent Night?",
+          answers: [
+            "The Paris Peace Conference",
+            "The World War I Christmas Truce",
+            "The armistice signing",
+            "The Somme offensive",
+          ],
+          correctAnswer: 1,
+          explanation: "Accounts of the 1914 Christmas truce include soldiers singing carols such as Silent Night.",
+        ),
+        Question(
+          question: "Who arranged the Ukrainian song Shchedryk that underlies Carol of the Bells?",
+          answers: [
+            "Mykola Leontovych",
+            "Adolphe Adam",
+            "Franz Gruber",
+            "Peter Wilhousky",
+          ],
+          correctAnswer: 0,
+          explanation: "Mykola Leontovych created the famous choral arrangement of Shchedryk.",
+        ),
+        Question(
+          question: "Who wrote the well-known English Christmas lyrics for Carol of the Bells in the 1930s?",
+          answers: [
+            "John Mason Neale",
+            "Peter J. Wilhousky",
+            "Charles Wesley",
+            "Phillips Brooks",
+          ],
+          correctAnswer: 1,
+          explanation: "Peter J. Wilhousky adapted the Ukrainian melody with English words.",
+        ),
       ],
     },
   },

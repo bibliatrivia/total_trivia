@@ -56,12 +56,14 @@ class ProgressSnapshot {
       .length;
 
   int get categoriesPlayed => records.values
-      .where((topics) => topics.values.any(
-          (levels) => levels.values.any((record) => record.attempts > 0)))
+      .where(
+        (topics) => topics.values.any(
+          (levels) => levels.values.any((record) => record.attempts > 0),
+        ),
+      )
       .length;
 
-  int get levelsPlayed =>
-      levels.where((record) => record.attempts > 0).length;
+  int get levelsPlayed => levels.where((record) => record.attempts > 0).length;
 
   int categoryPoints(String category) {
     final topics = records[category];
