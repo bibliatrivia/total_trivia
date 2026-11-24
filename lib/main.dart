@@ -717,6 +717,16 @@ class CategoriesScreen extends StatelessWidget {
           physics: const AlwaysScrollableScrollPhysics(),
           padding: const EdgeInsets.all(20),
           children: [
+            Center(
+              child: Image.asset(
+                'assets/images/total_trivia_logo.png',
+                width: 88,
+                height: 88,
+                fit: BoxFit.contain,
+                semanticLabel: 'Total Trivia logo',
+              ),
+            ),
+            const SizedBox(height: 10),
             const Text(
               'One app. Every curiosity.',
               style: TextStyle(

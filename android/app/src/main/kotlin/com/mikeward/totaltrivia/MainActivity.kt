@@ -1,4 +1,4 @@
-package com.example.total_trivia
+package com.mikeward.totaltrivia
 
 import io.flutter.embedding.android.FlutterActivity
 
