@@ -772,47 +772,153 @@ class CategoriesScreen extends StatelessWidget {
                 ),
               ),
             ),
-            ...([...categories]..sort(
-                  (a, b) =>
-                      a.title.toLowerCase().compareTo(b.title.toLowerCase()),
-                ))
-                .map(
-                  (category) => Card(
-                    child: ListTile(
-                      contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 18,
-                        vertical: 12,
+            ..._homeMenuItems().map((item) {
+              if (item == null) {
+                return Card(
+                  child: ListTile(
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 18,
+                      vertical: 12,
+                    ),
+                    leading: const Text('🌏', style: TextStyle(fontSize: 30)),
+                    title: const Text(
+                      'Countries',
+                      style: TextStyle(
+                        fontSize: 19,
+                        fontWeight: FontWeight.bold,
                       ),
-                      leading: Text(
-                        category.icon,
-                        style: const TextStyle(fontSize: 30),
-                      ),
-                      title: Text(
-                        category.title,
-                        style: const TextStyle(
-                          fontSize: 19,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      subtitle: Text(
-                        category.title == 'Harry Potter'
-                            ? '7 books · 8 movies'
-                            : '${category.subcategories.length} topics',
-                      ),
-                      trailing: const Icon(Icons.chevron_right),
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => category.title == 'Harry Potter'
-                              ? const HarryPotterSectionsScreen()
-                              : (category.title == 'India'
-                                    ? const IndiaSectionsScreen()
-                                    : TopicsScreen(category: category)),
-                        ),
+                    ),
+                    subtitle: const Text('China · India'),
+                    trailing: const Icon(Icons.chevron_right),
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const CountriesScreen(),
                       ),
                     ),
                   ),
+                );
+              }
+              final category = item;
+              return Card(
+                child: ListTile(
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 18,
+                    vertical: 12,
+                  ),
+                  leading: Text(
+                    category.icon,
+                    style: const TextStyle(fontSize: 30),
+                  ),
+                  title: Text(
+                    category.title,
+                    style: const TextStyle(
+                      fontSize: 19,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  subtitle: Text(
+                    category.title == 'Harry Potter'
+                        ? '7 books · 8 movies'
+                        : '${category.subcategories.length} topics',
+                  ),
+                  trailing: const Icon(Icons.chevron_right),
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => category.title == 'Harry Potter'
+                          ? const HarryPotterSectionsScreen()
+                          : TopicsScreen(category: category),
+                    ),
+                  ),
                 ),
+              );
+            }),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+List<TriviaCategory?> _homeMenuItems() {
+  final items = <TriviaCategory?>[
+    ...categories.where(
+      (category) => category.title != 'China' && category.title != 'India',
+    ),
+    null,
+  ];
+  items.sort((a, b) {
+    final aTitle = a?.title ?? 'Countries';
+    final bTitle = b?.title ?? 'Countries';
+    return aTitle.toLowerCase().compareTo(bTitle.toLowerCase());
+  });
+  return items;
+}
+
+class CountriesScreen extends StatelessWidget {
+  const CountriesScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    appBar: AppBar(
+      title: const Text('Countries'),
+      actions: [_homeAction(context)],
+    ),
+    body: SafeArea(
+      child: Scrollbar(
+        child: ListView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          padding: const EdgeInsets.all(16),
+          children: [
+            const Text(
+              'Choose a country',
+              style: TextStyle(
+                fontSize: 24,
+                color: green,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 12),
+            Card(
+              child: ListTile(
+                leading: const Text('🇨🇳', style: TextStyle(fontSize: 30)),
+                title: const Text(
+                  'China',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                subtitle: const Text('23 provinces'),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const GroupedTopicsScreen(
+                      category: 'China',
+                      title: 'China Provinces',
+                      subtitle: 'Choose from all 23 provinces',
+                      topics: chinaProvinces,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: const Text('🇮🇳', style: TextStyle(fontSize: 30)),
+                title: const Text(
+                  'India',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                subtitle: const Text('28 states · 8 Union Territories'),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const IndiaSectionsScreen(),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
